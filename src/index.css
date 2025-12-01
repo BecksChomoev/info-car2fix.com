@@ -76,22 +76,3 @@ select:focus-visible {
 input, textarea, select {
   @apply transition-all duration-200;
 }
-
-/* Animated gradient border */
-.gradient-border {
-  position: relative;
-}
-
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  padding: 2px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, #1E3A8A, #C41E3A);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
