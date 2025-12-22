@@ -225,8 +225,8 @@ export default function BodyShop() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h4>
-                    <a href="tel:7734619388" className="text-brand-red hover:underline text-lg">
-                      (773) 461-9388
+                    <a href="tel:6072511509" className="text-brand-red hover:underline text-lg">
+                      (607) 251-1509
                     </a>
                   </div>
                 </div>

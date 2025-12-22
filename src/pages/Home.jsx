@@ -326,11 +326,11 @@ export default function Home() {
               Contact us today for a free estimate
             </p>
             <a
-              href="tel:7734619388"
+              href="tel:6072511509"
               className="inline-flex items-center gap-3 px-10 py-5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold text-lg rounded-full transition-all hover:shadow-xl hover:shadow-brand-red/25"
             >
               <Phone className="w-6 h-6" />
-              <span>(773) 461-9388</span>
+              <span>(607) 251-1509</span>
             </a>
           </motion.div>
         </div>

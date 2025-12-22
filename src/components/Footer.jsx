@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react'
+import { Link } from 'react-router-dom';
+import { Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-900 dark:bg-black text-white">
@@ -17,26 +17,6 @@ export default function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Quality repairs you can trust. Professional automotive services for all your mechanical and body work needs.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 bg-gray-800 hover:bg-brand-blue rounded-full transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 bg-gray-800 hover:bg-brand-red rounded-full transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -100,11 +80,11 @@ export default function Footer() {
               <p className="text-white/80">Our team is ready to help you</p>
             </div>
             <a
-              href="tel:7734619388"
+              href="tel:6072511509"
               className="flex items-center gap-2 px-6 py-3 bg-white text-brand-blue font-semibold rounded-full hover:bg-gray-100 transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span>(773) 461-9388</span>
+              <span>(607) 251-1509</span>
             </a>
           </div>
         </div>
