@@ -22,12 +22,18 @@ export default async function handler(req, res) {
 
     // Get environment variables
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-    const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+    const TELEGRAM_CHAT_ID_MECHANICAL = process.env.TELEGRAM_CHAT_ID_MECHANICAL;
+    const TELEGRAM_CHAT_ID_BODYSHOP = process.env.TELEGRAM_CHAT_ID_BODYSHOP;
 
-    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID_MECHANICAL || !TELEGRAM_CHAT_ID_BODYSHOP) {
       console.error('Missing Telegram environment variables');
       return res.status(500).json({ error: 'Server configuration error' });
     }
+
+    // Select the correct chat ID based on shop type
+    const TELEGRAM_CHAT_ID = shopType === 'body' 
+      ? TELEGRAM_CHAT_ID_BODYSHOP 
+      : TELEGRAM_CHAT_ID_MECHANICAL;
 
     // Format the message for Telegram
     const shopEmoji = shopType === 'mechanical' ? '🔧' : '🎨';
