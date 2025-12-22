@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send, CheckCircle, Loader2 } from 'lucide-react'
+import { Send, CheckCircle, Loader2, AlertCircle } from 'lucide-react'
 
 export default function ContactForm({ shopType = 'mechanical' }) {
   const [formData, setFormData] = useState({
@@ -9,7 +9,7 @@ export default function ContactForm({ shopType = 'mechanical' }) {
     carModel: '',
     issue: '',
   })
-  const [status, setStatus] = useState('idle') // idle, loading, success
+  const [status, setStatus] = useState('idle') // idle, loading, success, error
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -20,21 +20,35 @@ export default function ContactForm({ shopType = 'mechanical' }) {
     e.preventDefault()
     setStatus('loading')
     
-    // Log form data (you'll connect backend later)
-    console.log('Form submitted:', {
-      shopType,
-      ...formData,
-      timestamp: new Date().toISOString(),
-    })
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          shopType,
+        }),
+      })
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    
-    setStatus('success')
-    setFormData({ name: '', phone: '', carModel: '', issue: '' })
-    
-    // Reset status after 3 seconds
-    setTimeout(() => setStatus('idle'), 3000)
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong')
+      }
+
+      setStatus('success')
+      setFormData({ name: '', phone: '', carModel: '', issue: '' })
+      
+      // Reset status after 3 seconds
+      setTimeout(() => setStatus('idle'), 3000)
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setStatus('error')
+      // Reset status after 3 seconds
+      setTimeout(() => setStatus('idle'), 3000)
+    }
   }
 
   const inputClasses = `
@@ -60,6 +74,24 @@ export default function ContactForm({ shopType = 'mechanical' }) {
         </h3>
         <p className="text-green-600 dark:text-green-400">
           We'll get back to you as soon as possible.
+        </p>
+      </motion.div>
+    )
+  }
+
+  if (status === 'error') {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="p-8 rounded-2xl bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 text-center"
+      >
+        <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
+        <h3 className="font-display font-semibold text-xl text-red-800 dark:text-red-200 mb-2">
+          Something Went Wrong
+        </h3>
+        <p className="text-red-600 dark:text-red-400">
+          Please try again or call us directly at (607) 251-1509
         </p>
       </motion.div>
     )
