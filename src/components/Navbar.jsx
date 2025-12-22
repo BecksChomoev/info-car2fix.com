@@ -88,7 +88,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
 
             {/* Call Now Button */}
             <a
-              href="tel:7734619388"
+              href="tel:6072511509"
               className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-brand-red/25"
             >
               <Phone className="w-4 h-4" />
