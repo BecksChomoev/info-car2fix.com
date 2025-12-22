@@ -135,11 +135,11 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                 )
               })}
               <a
-                href="tel:7734619388"
+                href="tel:6072511509"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-brand-red text-white font-semibold rounded-xl mt-4"
               >
                 <Phone className="w-4 h-4" />
-                <span>(773) 461-9388</span>
+                <span>(607) 251-1509</span>
               </a>
             </div>
           </motion.div>
