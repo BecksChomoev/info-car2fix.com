@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Sun, Moon, Phone, Menu, X } from 'lucide-react'
@@ -13,6 +14,10 @@ const navLinks = [
 export default function Navbar({ darkMode, toggleDarkMode }) {
   const location = useLocation()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [appointmentOpen, setAppointmentOpen] = useState(false)
+
+  const openAppointmentChooser = () => setAppointmentOpen(true)
+  const closeAppointmentChooser = () => setAppointmentOpen(false)
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
@@ -96,12 +101,13 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             </a>
 
             {/* Book Appointment Button */}
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={openAppointmentChooser}
               className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-brand-red/25"
             >
               <span>Book Appointment</span>
-            </a>
+            </button>
 
             {/* Mobile Menu Button */}
             <button
@@ -151,18 +157,85 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                   <Phone className="w-5 h-5" />
                   <span>Call (607) 251-1509</span>
                 </a>
-                <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    openAppointmentChooser()
+                  }}
                   className="flex items-center justify-center gap-2 px-4 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold rounded-xl"
                 >
                   <span>Book Appointment</span>
-                </a>
+                </button>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Appointment Chooser */}
+      {typeof document !== 'undefined' &&
+        createPortal(
+          <AnimatePresence>
+            {appointmentOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 px-4"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Choose appointment type"
+                onClick={closeAppointmentChooser}
+              >
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 20, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="relative w-full max-w-md rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-2xl p-8 text-center"
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  <button
+                    type="button"
+                    onClick={closeAppointmentChooser}
+                    className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                    aria-label="Close appointment chooser"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+
+                  <h3 className="font-display font-bold text-2xl text-gray-900 dark:text-white">
+                    Which appointment do you want to book?
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 mb-6">
+                    Choose a shop and we’ll take you to the form.
+                  </p>
+
+                  <div className="grid gap-3">
+                    <Link
+                      to="/mech-shop#contact"
+                      onClick={closeAppointmentChooser}
+                      className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-brand-blue text-white font-semibold hover:bg-brand-blue-dark transition-colors"
+                    >
+                      <span>Mechanical Shop</span>
+                      <span className="text-white/80 text-sm">Newark</span>
+                    </Link>
+                    <Link
+                      to="/body-shop#contact"
+                      onClick={closeAppointmentChooser}
+                      className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-brand-red text-white font-semibold hover:bg-brand-red-dark transition-colors"
+                    >
+                      <span>Body Shop</span>
+                      <span className="text-white/80 text-sm">Linden</span>
+                    </Link>
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body
+        )}
     </nav>
   )
 }
