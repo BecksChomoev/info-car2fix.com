@@ -7,22 +7,22 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 dark:bg-black text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-6">
-              <img src="/logo.png" alt="Car2Fix" className="h-12 w-auto brightness-0 invert" />
+          <div className="col-span-2 lg:col-span-1">
+            <Link to="/" className="inline-block mb-4 sm:mb-6">
+              <img src="/logo.png" alt="Car2Fix" className="h-10 sm:h-12 w-auto brightness-0 invert" />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-gray-400 text-sm leading-relaxed mb-4 sm:mb-6">
               Quality repairs you can trust. Professional automotive services for all your mechanical and body work needs.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-display font-semibold text-lg mb-6">Quick Links</h4>
-            <ul className="space-y-3">
+          <div className="col-span-2 sm:col-span-1">
+            <h4 className="font-display font-semibold text-base sm:text-lg mb-4 sm:mb-6">Quick Links</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {[
                 { name: 'Home', path: '/' },
                 { name: 'Mechanical Shop', path: '/mech-shop' },
@@ -43,7 +43,7 @@ export default function Footer() {
 
           {/* Mechanical Shop */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-6">Mechanical Shop</h4>
+            <h4 className="font-display font-semibold text-base sm:text-lg mb-4 sm:mb-6">Mechanical Shop</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Body Shop */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-6">Body Shop</h4>
+            <h4 className="font-display font-semibold text-base sm:text-lg mb-4 sm:mb-6">Body Shop</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" />

@@ -15,15 +15,15 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
+    <nav className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src="/logo.png" 
-              alt="Car2Fix Logo" 
-              className="h-12 w-auto transition-transform group-hover:scale-105"
+            <img
+              src="/logo.png"
+              alt="Car2Fix Logo"
+              className="h-10 sm:h-12 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
 
@@ -86,13 +86,21 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
               </AnimatePresence>
             </motion.button>
 
-            {/* Call Now Button */}
+            {/* Phone Number - Always Visible */}
             <a
               href="tel:6072511509"
+              className="hidden md:flex items-center gap-2 text-gray-700 dark:text-gray-300 font-semibold"
+            >
+              <Phone className="w-4 h-4 text-brand-red" />
+              <span>(607) 251-1509</span>
+            </a>
+
+            {/* Book Appointment Button */}
+            <a
+              href="#contact"
               className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-brand-red/25"
             >
-              <Phone className="w-4 h-4" />
-              <span>Call Now</span>
+              <span>Book Appointment</span>
             </a>
 
             {/* Mobile Menu Button */}
@@ -124,7 +132,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                     key={link.path}
                     to={link.path}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-4 py-3 rounded-xl font-medium transition-colors ${
+                    className={`block px-4 py-4 rounded-xl font-medium text-base transition-colors ${
                       isActive
                         ? 'bg-brand-blue text-white'
                         : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
@@ -134,13 +142,23 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                   </Link>
                 )
               })}
-              <a
-                href="tel:6072511509"
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-brand-red text-white font-semibold rounded-xl mt-4"
-              >
-                <Phone className="w-4 h-4" />
-                <span>(607) 251-1509</span>
-              </a>
+              <div className="pt-4 space-y-3 border-t border-gray-100 dark:border-gray-800 mt-4">
+                <a
+                  href="tel:6072511509"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 px-4 py-4 bg-brand-red text-white font-semibold rounded-xl"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>Call (607) 251-1509</span>
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 px-4 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold rounded-xl"
+                >
+                  <span>Book Appointment</span>
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
