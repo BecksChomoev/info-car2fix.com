@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
 export default function ServiceCard({ icon: Icon, title, description, delay = 0, variant = 'blue' }) {

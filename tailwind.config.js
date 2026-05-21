@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
   ],
   darkMode: 'class',
   theme: {
@@ -18,8 +18,8 @@ export default {
         }
       },
       fontFamily: {
-        display: ['Outfit', 'sans-serif'],
-        body: ['DM Sans', 'sans-serif'],
+        display: ['var(--font-outfit)', 'Outfit', 'sans-serif'],
+        body: ['var(--font-dm-sans)', 'DM Sans', 'sans-serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',

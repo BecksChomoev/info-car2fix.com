@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <Link to="/" className="inline-block mb-4 sm:mb-6">
+            <Link href="/" className="inline-block mb-4 sm:mb-6">
               <img src="/logo.png" alt="Car2Fix" className="h-10 sm:h-12 w-auto brightness-0 invert" />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-4 sm:mb-6">
@@ -31,7 +31,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.path}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     {link.name}
