@@ -31,4 +31,6 @@ yarn-debug.log*
 /.idea
 
 # claude code local settings
-.claude/settings.local.json
+.claude/
+.env*.local
+.env*

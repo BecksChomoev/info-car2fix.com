@@ -1,7 +1,5 @@
 import './globals.css'
 import { DM_Sans, Outfit } from 'next/font/google'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -82,55 +80,6 @@ export const viewport = {
   themeColor: '#111827',
 }
 
-const organizationLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Car2Fix',
-  url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
-  telephone: '+1-607-251-1509',
-  sameAs: [],
-  contactPoint: [
-    {
-      '@type': 'ContactPoint',
-      telephone: '+1-607-251-1509',
-      contactType: 'customer service',
-      areaServed: 'US-NJ',
-      availableLanguage: ['English'],
-    },
-  ],
-  subOrganization: [
-    {
-      '@type': 'AutoRepair',
-      name: 'Car2Fix — Mechanical Shop',
-      telephone: '+1-607-251-1509',
-      url: `${SITE_URL}/mech-shop`,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '408 Carnegie Ave',
-        addressLocality: 'Newark',
-        addressRegion: 'NJ',
-        postalCode: '07114',
-        addressCountry: 'US',
-      },
-    },
-    {
-      '@type': 'AutoBodyShop',
-      name: 'Car2Fix — Body Shop',
-      telephone: '+1-607-251-1509',
-      url: `${SITE_URL}/body-shop`,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '1420 E Elizabeth Ave',
-        addressLocality: 'Linden',
-        addressRegion: 'NJ',
-        postalCode: '07036',
-        addressCountry: 'US',
-      },
-    },
-  ],
-}
-
 const darkModeBootstrap = `
 (function(){try{var s=localStorage.getItem('darkMode');var d=s!==null?JSON.parse(s):window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();
 `
@@ -151,10 +100,6 @@ export default function RootLayout({ children }) {
         <script dangerouslySetInnerHTML={{ __html: gtmSnippet }} />
         {/* End Google Tag Manager */}
         <script dangerouslySetInnerHTML={{ __html: darkModeBootstrap }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
-        />
       </head>
       <body className="font-body antialiased">
         <noscript>
@@ -165,11 +110,7 @@ export default function RootLayout({ children }) {
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   )

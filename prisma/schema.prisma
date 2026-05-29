@@ -1,0 +1,35 @@
+// Car2Fix CRM — Prisma schema (Prisma 7)
+// Connection URLs live OUTSIDE this file in v7:
+//  - Runtime: lib/prisma.js builds a pg driver adapter from the POOLED
+//    DATABASE_URL and passes it to the PrismaClient constructor.
+//  - Migrations: prisma.config.js supplies the UNPOOLED DATABASE_URL_UNPOOLED
+//    (migrate can't run over the PgBouncer pooler).
+// Both env vars are provisioned by the Neon Vercel Marketplace integration.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// A sales lead captured from the website contact form. The CRM board groups
+/// these by `stage`; marketing moves them through the pipeline.
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String
+  carModel  String
+  issue     String
+  shopType  String // 'mechanical' | 'body'
+  source    String   @default("website_form")
+  stage     String   @default("new") // new | contacted | estimate_sent | scheduled | in_service | completed | lost
+  value     Int? // estimated job value in whole US dollars, editable in the CRM
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([stage])
+  @@index([shopType])
+  @@index([createdAt])
+}
