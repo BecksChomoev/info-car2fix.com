@@ -93,14 +93,14 @@ export default function MechShopContent() {
             </span>
 
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
-              Expert Mechanical
+              Mechanical Repair{' '}
               <br />
-              <span className="text-white/90">Repairs &amp; Service</span>
+              <span className="text-white/90">Shop in Newark</span>
             </h1>
 
             <p className="text-lg text-white/80 mb-8 max-w-md">
-              From routine maintenance to complex repairs, our certified technicians
-              have the expertise to keep your vehicle running at its best.
+              Expert repairs and service — from routine maintenance to complex jobs,
+              our certified technicians keep your vehicle running at its best.
             </p>
 
             <address className="not-italic space-y-3 mb-8">
@@ -138,10 +138,10 @@ export default function MechShopContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl text-gray-900 dark:text-white mb-4">
-              Our Mechanical Services
+              Full-Service Auto Repair
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Comprehensive automotive repair and maintenance services
+              Comprehensive automotive repair and maintenance services in Newark, NJ
             </p>
           </div>
 
@@ -164,7 +164,7 @@ export default function MechShopContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="font-display font-bold text-2xl text-gray-900 dark:text-white mb-4">
-              Certified Professionals
+              Certified Technicians in New Jersey
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
@@ -189,7 +189,11 @@ export default function MechShopContent() {
         </div>
       </section>
 
-      <GoogleReviews variant="light" shopType="mechanical" />
+      <GoogleReviews
+        variant="light"
+        shopType="mechanical"
+        heading="What Newark Drivers Say About Car2Fix"
+      />
 
       <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-950 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -223,7 +227,7 @@ export default function MechShopContent() {
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Address</h3>
                     <a
-                      href="https://maps.app.goo.gl/ijzToSvEj6ask7e17"
+                      href="https://www.google.com/maps/place/Car2Fix+Mechanic+Shop/@40.6982681,-74.1902248,648m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c25315896ec88f:0x350c51bc8912b158!8m2!3d40.6982681!4d-74.1876499!16s%2Fg%2F11z2syywfh"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-400 hover:text-brand-blue"
@@ -251,7 +255,7 @@ export default function MechShopContent() {
               <div className="rounded-2xl overflow-hidden border-2 border-gray-200 dark:border-gray-700">
                 <iframe
                   title="Mechanical Shop Location"
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3024!2d-74.1877054!3d40.6983032!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c252e676fe7d6b%3A0x252634390a5adf5f!2sDrivo%20Rent%20A%20Car!5e0!3m2!1sen!2sus!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3024!2d-74.1876499!3d40.6982681!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25315896ec88f%3A0x350c51bc8912b158!2sCar2Fix%20Mechanic%20Shop!5e0!3m2!1sen!2sus!4v1"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}

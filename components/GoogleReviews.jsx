@@ -105,7 +105,12 @@ function ReviewCard({ review, index }) {
 }
 
 // Main Google Reviews Section Component
-export default function GoogleReviews({ variant = 'default', shopType = 'both' }) {
+export default function GoogleReviews({
+  variant = 'default',
+  shopType = 'both',
+  heading = 'What Our Customers Say',
+  subheading = "Don't just take our word for it - hear from our satisfied customers",
+}) {
   const reviewLink = shopType === 'mechanical'
     ? CONFIG.reviewLinks.mechanical
     : shopType === 'body'
@@ -127,10 +132,10 @@ export default function GoogleReviews({ variant = 'default', shopType = 'both' }
             <span>Customer Reviews</span>
           </div>
           <h2 className="font-display font-bold text-2xl sm:text-4xl text-gray-900 dark:text-white mb-3 sm:mb-4">
-            What Our Customers Say
+            {heading}
           </h2>
           <p className="text-base sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from our satisfied customers
+            {subheading}
           </p>
         </motion.div>
 

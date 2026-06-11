@@ -1,4 +1,5 @@
 import HomeContent from './HomeContent'
+import { homeFaqs } from '@/lib/faqs'
 
 const SITE_URL = 'https://www.car2fix.com'
 
@@ -42,12 +43,26 @@ const breadcrumbLd = {
   ],
 }
 
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+}
+
 export default function Page() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <HomeContent />
     </>

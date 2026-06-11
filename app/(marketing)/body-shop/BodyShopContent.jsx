@@ -48,7 +48,7 @@ function BeforeAfterGallery() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-display font-bold text-4xl text-gray-900 dark:text-white mb-4">
-            Before &amp; After Gallery
+            Collision Repair Results — Before &amp; After
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             See the quality of our work with real examples from our shop
@@ -137,8 +137,8 @@ const services = [
   { icon: Hammer, title: 'Dent Removal', description: 'Paintless dent repair and traditional dent removal for all sizes of damage.' },
   { icon: Frame, title: 'Frame Straightening', description: 'Precision frame alignment and straightening using computerized equipment.' },
   { icon: Sparkles, title: 'Scratch Repair', description: "Expert scratch and scuff removal to restore your vehicle's finish." },
-  { icon: Glasses, title: 'Glass Replacement', description: 'Windshield and auto glass replacement and repair services.' },
-  { icon: Layers, title: 'Panel Replacement', description: 'Replacement of damaged body panels including fenders, doors, and hoods.' },
+  { icon: Glasses, title: 'Windshield Replacement', description: 'Windshield and auto glass replacement and repair services.' },
+  { icon: Layers, title: 'Body Panel Replacement', description: 'Replacement of damaged body panels including fenders, doors, and hoods.' },
   { icon: Wind, title: 'Bumper Repair', description: 'Front and rear bumper repair, replacement, and refinishing.' },
   { icon: ScanLine, title: 'Color Matching', description: 'Computer-aided color matching for seamless paint repairs.' },
   { icon: Dices, title: 'Fiberglass Repair', description: 'Repair of fiberglass body parts and components.' },
@@ -181,9 +181,9 @@ export default function BodyShopContent() {
             </span>
 
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
-              Professional Body
+              Auto Body Shop in Linden{' '}
               <br />
-              <span className="text-white/90">Work &amp; Collision Repair</span>
+              <span className="text-white/90">Professional Body Repair</span>
             </h1>
 
             <p className="text-lg text-white/80 mb-8 max-w-md">
@@ -252,7 +252,7 @@ export default function BodyShopContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display font-bold text-3xl text-gray-900 dark:text-white mb-4">
-              Certified &amp; Trusted
+              Certified Body Shop in Linden
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Our technicians are certified professionals committed to the highest standards of quality
@@ -311,14 +311,18 @@ export default function BodyShopContent() {
         </div>
       </section>
 
-      <GoogleReviews variant="default" shopType="body" />
+      <GoogleReviews
+        variant="default"
+        shopType="body"
+        heading="What Linden Customers Say"
+      />
 
       <section id="contact" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
               <h2 className="font-display font-bold text-4xl text-gray-900 dark:text-white mb-6">
-                Get a Free Estimate
+                Free Estimate for Your Body Repairs
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
                 Whether it&apos;s a minor scratch or major collision damage, we&apos;ll provide

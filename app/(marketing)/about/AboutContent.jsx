@@ -31,12 +31,12 @@ const stats = [
 const values = [
   {
     icon: Shield,
-    title: 'No Surprises',
-    description: 'We give you an honest quote upfront. The price we quote is the price you pay—no hidden fees, no unexpected charges.',
+    title: 'No Hidden Fees',
+    description: 'We give you an honest quote upfront. The price we quote is the price you pay—no surprises, no unexpected charges.',
   },
   {
     icon: ThumbsUp,
-    title: 'Done Right, First Time',
+    title: 'Certified Repair Done Right',
     description: "Our certified technicians fix it properly the first time. We don't cut corners because your safety depends on our work.",
   },
   {
@@ -47,10 +47,10 @@ const values = [
 ]
 
 const whyChooseUs = [
-  { icon: BadgeCheck, title: 'Certified Technicians', description: 'ASE & I-CAR certified professionals with factory training' },
-  { icon: Award, title: 'Warranty Protection', description: 'Lifetime warranty on body work, 12-month/12k miles on mechanical' },
+  { icon: BadgeCheck, title: 'ASE & I-CAR Certified Technicians', description: 'Factory-trained professionals who repair to manufacturer standards' },
+  { icon: Award, title: 'Lifetime Warranty on Body Work, 12-Month on Mechanical', description: 'Every repair leaves our shop backed in writing—no fine print' },
   { icon: Clock, title: 'Fast Turnaround', description: 'We respect your time—most repairs done within estimate' },
-  { icon: FileCheck, title: 'Insurance Assistance', description: 'We handle the paperwork and work with all insurance companies' },
+  { icon: FileCheck, title: 'Works with All Major Insurance Companies', description: 'GEICO, State Farm, Progressive, Allstate & more—we handle the paperwork' },
 ]
 
 const commitments = [
@@ -71,18 +71,19 @@ export default function AboutContent() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6">
-              Family-Owned Since Day One
+              Started by Car People, for Car People
             </span>
 
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-              We Fix Cars.
+              About Car2Fix{' '}
               <br />
-              <span className="text-white/80">We Don&apos;t Fix Prices.</span>
+              <span className="text-white/80">Certified Auto Repair in Newark &amp; Linden</span>
             </h1>
 
             <p className="text-xl text-white/70 mb-8 max-w-2xl">
-              Tired of shops that overcharge, oversell, or overpromise? We get it.
-              That&apos;s exactly why we started Car2Fix—to be the honest shop we wished existed.
+              We fix cars. We don&apos;t fix prices. Tired of shops that overcharge,
+              oversell, or overpromise? That&apos;s exactly why we started Car2Fix—to
+              be the honest shop we wished existed.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -137,7 +138,7 @@ export default function AboutContent() {
                 Our Story
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 dark:text-white mb-6">
-                Started by Car People, for Car People
+                Family-Owned Auto Repair Since Day One
               </h2>
               <div className="space-y-4 text-gray-600 dark:text-gray-400 text-lg">
                 <p>
@@ -216,7 +217,7 @@ export default function AboutContent() {
               What Makes Us Different
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 dark:text-white mb-4">
-              The Car2Fix Promise
+              The Car2Fix Promise — Honest Repairs in New Jersey
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               We don&apos;t just fix cars—we fix the auto repair experience
@@ -256,7 +257,7 @@ export default function AboutContent() {
                 Why Choose Us
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 dark:text-white mb-6">
-                Your Car Deserves Better
+                The Best Choice to Repair Your Car at Car2Fix
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
                 We&apos;ve built our reputation on doing right by our customers.
@@ -320,10 +321,10 @@ export default function AboutContent() {
               Our Locations
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 dark:text-white mb-4">
-              Two Shops, One Standard of Excellence
+              Two Auto Repair Shops Serving New Jersey
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Conveniently located to serve Newark, Linden, and surrounding communities
+              Two shops, one standard of excellence — serving Newark, Linden, and surrounding communities
             </p>
           </div>
 

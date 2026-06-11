@@ -8,13 +8,15 @@ import {
   Shield,
   Clock,
   Award,
-  Users,
+  DollarSign,
   ArrowRight,
   Phone,
   MapPin,
   BadgeCheck,
 } from 'lucide-react'
 import GoogleReviews from '@/components/GoogleReviews'
+import FAQ from '@/components/FAQ'
+import { homeFaqs } from '@/lib/faqs'
 
 const features = [
   {
@@ -33,8 +35,8 @@ const features = [
     description: 'ASE & I-CAR certified professionals with factory training.',
   },
   {
-    icon: Users,
-    title: 'Customer First',
+    icon: DollarSign,
+    title: 'Honest Pricing',
     description: 'Transparent pricing and honest assessments. No surprises, ever.',
   },
 ]
@@ -74,14 +76,14 @@ export default function HomeContent() {
             </span>
 
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
-              Quality Repairs
+              Auto Repair Shop{' '}
               <br />
-              <span className="text-white/90">You Can Trust</span>
+              <span className="text-white/90">in Newark &amp; Linden</span>
             </h1>
 
             <p className="text-lg text-white/80 mb-8 max-w-md">
-              Professional automotive mechanical and body shop services.
-              From engine repairs to collision work, we&apos;ve got you covered.
+              Quality repairs you can trust — professional mechanical and body
+              shop services. From engine repairs to collision work, we&apos;ve got you covered.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
@@ -158,7 +160,7 @@ export default function HomeContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl sm:text-5xl text-gray-900 dark:text-white mb-4">
-              Two Locations to Serve You
+              Mechanical &amp; Body Shop to Serve You
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Conveniently located in Newark and Linden, NJ
@@ -237,7 +239,7 @@ export default function HomeContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl sm:text-5xl text-gray-900 dark:text-white mb-4">
-              Why Choose Car2Fix?
+              Why Drivers Choose Car2Fix
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               We&apos;re committed to providing exceptional service and quality repairs
@@ -270,13 +272,15 @@ export default function HomeContent() {
 
       <GoogleReviews variant="light" shopType="both" />
 
+      <FAQ items={homeFaqs} />
+
       <section className="py-20 bg-gray-900 dark:bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display font-bold text-4xl sm:text-5xl text-white mb-6">
-            Ready to Get Your Car Fixed?
+            Get a Free Estimate at Our Mechanical &amp; Body Shop
           </h2>
           <p className="text-xl text-gray-400 mb-10">
-            Contact us today for a free estimate
+            Two locations serving Newark &amp; Linden, NJ — call today
           </p>
           <a
             href="tel:6072511509"

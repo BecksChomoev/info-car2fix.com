@@ -52,6 +52,8 @@ const autoRepairLd = {
     addressCountry: 'US',
   },
   geo: { '@type': 'GeoCoordinates', latitude: 40.6983, longitude: -74.1877 },
+  hasMap:
+    'https://www.google.com/maps/place/Car2Fix+Mechanic+Shop/@40.6982681,-74.1902248,648m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c25315896ec88f:0x350c51bc8912b158!8m2!3d40.6982681!4d-74.1876499!16s%2Fg%2F11z2syywfh',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
