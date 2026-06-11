@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Phone, MapPin, Clock } from 'lucide-react';
+import { PHONE, MECH_SHOP, BODY_SHOP } from '@/lib/site';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -55,7 +56,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                <span>408 Carnegie Ave<br />Newark, NJ 07114</span>
+                <span>{MECH_SHOP.street}<br />{MECH_SHOP.cityStateZip}</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Clock className="w-5 h-5 text-brand-blue flex-shrink-0" />
@@ -70,7 +71,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" />
-                <span>1420 E Elizabeth Ave<br />Linden, NJ 07036</span>
+                <span>{BODY_SHOP.street}<br />{BODY_SHOP.cityStateZip}</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Clock className="w-5 h-5 text-brand-red flex-shrink-0" />
@@ -88,11 +89,11 @@ export default function Footer() {
               <p className="text-white/80">Our team is ready to help you</p>
             </div>
             <a
-              href="tel:6072511509"
+              href={PHONE.href}
               className="flex items-center gap-2 px-6 py-3 bg-white text-brand-blue font-semibold rounded-full hover:bg-gray-100 transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span>(607) 251-1509</span>
+              <span>{PHONE.display}</span>
             </a>
           </div>
         </div>

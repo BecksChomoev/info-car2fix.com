@@ -1,5 +1,6 @@
 import './globals.css'
 import { DM_Sans, Outfit } from 'next/font/google'
+import { SITE_URL } from '@/lib/site'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -15,7 +16,6 @@ const outfit = Outfit({
   display: 'swap',
 })
 
-const SITE_URL = 'https://www.car2fix.com'
 const GTM_ID = 'GTM-TJ5WSTFT'
 
 export const metadata = {

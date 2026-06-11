@@ -1,59 +1,28 @@
 import MechShopContent from './MechShopContent'
+import JsonLd from '@/components/JsonLd'
+import { SITE_URL, PHONE, MECH_SHOP, pageMetadata, breadcrumbLd } from '@/lib/site'
 
-const SITE_URL = 'https://www.car2fix.com'
-
-const TITLE = 'Mechanical Shop in Newark, NJ | Car2Fix Auto Repair'
-const DESCRIPTION =
-  'ASE-certified mechanical repair in Newark, NJ. Engine, transmission, brakes, oil change, A/C & more. 408 Carnegie Ave. Free estimates. Call (607) 251-1509.'
-
-export const metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
-  alternates: { canonical: SITE_URL + '/mech-shop' },
-  openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: SITE_URL + '/mech-shop',
-    type: 'website',
-    siteName: 'Car2Fix',
-    locale: 'en_US',
-    images: [
-      {
-        url: '/og-mech-shop.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Car2Fix Mechanical Shop in Newark, NJ',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: TITLE,
-    description: DESCRIPTION,
-    images: ['/og-mech-shop.jpg'],
-  },
-}
+export const metadata = pageMetadata({
+  title: 'Mechanical Shop in Newark, NJ | Car2Fix Auto Repair',
+  description:
+    'ASE-certified mechanical repair in Newark, NJ. Engine, transmission, brakes, oil change, A/C & more. 408 Carnegie Ave. Free estimates. Call (607) 251-1509.',
+  path: '/mech-shop',
+  ogImage: '/og-mech-shop.jpg',
+  ogAlt: 'Car2Fix Mechanical Shop in Newark, NJ',
+})
 
 const autoRepairLd = {
   '@context': 'https://schema.org',
   '@type': 'AutoRepair',
   '@id': SITE_URL + '/mech-shop#shop',
-  name: 'Car2Fix — Mechanical Shop',
+  name: MECH_SHOP.name,
   url: SITE_URL + '/mech-shop',
   image: SITE_URL + '/logo.png',
-  telephone: '+1-607-251-1509',
+  telephone: PHONE.e164,
   priceRange: '$$',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '408 Carnegie Ave',
-    addressLocality: 'Newark',
-    addressRegion: 'NJ',
-    postalCode: '07114',
-    addressCountry: 'US',
-  },
+  address: MECH_SHOP.postalAddress,
   geo: { '@type': 'GeoCoordinates', latitude: 40.6983, longitude: -74.1877 },
-  hasMap:
-    'https://www.google.com/maps/place/Car2Fix+Mechanic+Shop/@40.6982681,-74.1902248,648m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c25315896ec88f:0x350c51bc8912b158!8m2!3d40.6982681!4d-74.1876499!16s%2Fg%2F11z2syywfh',
+  hasMap: MECH_SHOP.mapUrl,
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -99,25 +68,17 @@ const autoRepairLd = {
   },
 }
 
-const breadcrumbLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Mechanical Shop', item: SITE_URL + '/mech-shop' },
-  ],
-}
-
 export default function Page() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(autoRepairLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      <JsonLd
+        data={[
+          autoRepairLd,
+          breadcrumbLd([
+            ['Home', '/'],
+            ['Mechanical Shop', '/mech-shop'],
+          ]),
+        ]}
       />
       <MechShopContent />
     </>

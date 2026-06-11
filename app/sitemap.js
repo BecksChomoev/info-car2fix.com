@@ -1,6 +1,6 @@
 import { servicePages, locationPages } from '@/lib/service-pages'
+import { SITE_URL } from '@/lib/site'
 
-const SITE_URL = 'https://www.car2fix.com'
 const LAST_MODIFIED = '2026-05-18'
 const SEO_PAGES_ADDED = '2026-06-11'
 

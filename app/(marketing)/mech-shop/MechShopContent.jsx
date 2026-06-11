@@ -28,6 +28,7 @@ import {
 import ServiceCard from '@/components/ServiceCard'
 import ContactForm from '@/components/ContactForm'
 import GoogleReviews from '@/components/GoogleReviews'
+import { PHONE, MECH_SHOP } from '@/lib/site'
 
 const services = [
   { icon: Gauge, title: 'Engine Diagnostics', description: 'Advanced computer diagnostics to identify engine issues accurately and efficiently.', href: '/engine-diagnostics-newark-nj' },
@@ -112,11 +113,11 @@ export default function MechShopContent() {
             <address className="not-italic space-y-3 mb-8">
               <div className="flex items-center gap-2 text-white/90">
                 <MapPin className="w-5 h-5 text-white" />
-                <span>408 Carnegie Ave, Newark, NJ 07114</span>
+                <span>{MECH_SHOP.address}</span>
               </div>
               <div className="flex items-center gap-2 text-white/90">
                 <Clock className="w-5 h-5 text-white" />
-                <span>Mon-Fri: 8am-6pm | Sat: 8am-2pm</span>
+                <span>{MECH_SHOP.hoursShort}</span>
               </div>
             </address>
 
@@ -129,11 +130,11 @@ export default function MechShopContent() {
                 <span>Book Appointment</span>
               </a>
               <a
-                href="tel:6072511509"
+                href={PHONE.href}
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/20 transition-all border border-white/30"
               >
                 <Phone className="w-5 h-5" />
-                <span>(607) 251-1509</span>
+                <span>{PHONE.display}</span>
               </a>
             </div>
           </div>
@@ -221,8 +222,8 @@ export default function MechShopContent() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
-                    <a href="tel:6072511509" className="text-brand-blue hover:underline text-lg">
-                      (607) 251-1509
+                    <a href={PHONE.href} className="text-brand-blue hover:underline text-lg">
+                      {PHONE.display}
                     </a>
                   </div>
                 </div>
@@ -234,12 +235,12 @@ export default function MechShopContent() {
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Address</h3>
                     <a
-                      href="https://www.google.com/maps/place/Car2Fix+Mechanic+Shop/@40.6982681,-74.1902248,648m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c25315896ec88f:0x350c51bc8912b158!8m2!3d40.6982681!4d-74.1876499!16s%2Fg%2F11z2syywfh"
+                      href={MECH_SHOP.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-400 hover:text-brand-blue"
                     >
-                      408 Carnegie Ave<br />Newark, NJ 07114
+                      {MECH_SHOP.street}<br />{MECH_SHOP.cityStateZip}
                     </a>
                   </div>
                 </div>

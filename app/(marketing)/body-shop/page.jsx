@@ -1,56 +1,26 @@
 import BodyShopContent from './BodyShopContent'
+import JsonLd from '@/components/JsonLd'
+import { SITE_URL, PHONE, BODY_SHOP, pageMetadata, breadcrumbLd } from '@/lib/site'
 
-const SITE_URL = 'https://www.car2fix.com'
-
-const TITLE = 'Body Shop in Linden, NJ | Collision Repair | Car2Fix'
-const DESCRIPTION =
-  'I-CAR certified body shop in Linden, NJ. Collision repair, auto painting, dent removal & frame straightening. We handle insurance claims. Lifetime warranty.'
-
-export const metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
-  alternates: { canonical: SITE_URL + '/body-shop' },
-  openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: SITE_URL + '/body-shop',
-    type: 'website',
-    siteName: 'Car2Fix',
-    locale: 'en_US',
-    images: [
-      {
-        url: '/og-body-shop.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Car2Fix Body Shop in Linden, NJ',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: TITLE,
-    description: DESCRIPTION,
-    images: ['/og-body-shop.jpg'],
-  },
-}
+export const metadata = pageMetadata({
+  title: 'Body Shop in Linden, NJ | Collision Repair | Car2Fix',
+  description:
+    'I-CAR certified body shop in Linden, NJ. Collision repair, auto painting, dent removal & frame straightening. We handle insurance claims. Lifetime warranty.',
+  path: '/body-shop',
+  ogImage: '/og-body-shop.jpg',
+  ogAlt: 'Car2Fix Body Shop in Linden, NJ',
+})
 
 const autoBodyShopLd = {
   '@context': 'https://schema.org',
   '@type': 'AutoBodyShop',
   '@id': SITE_URL + '/body-shop#shop',
-  name: 'Car2Fix — Body Shop',
+  name: BODY_SHOP.name,
   url: SITE_URL + '/body-shop',
   image: SITE_URL + '/logo.png',
-  telephone: '+1-607-251-1509',
+  telephone: PHONE.e164,
   priceRange: '$$',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '1420 E Elizabeth Ave',
-    addressLocality: 'Linden',
-    addressRegion: 'NJ',
-    postalCode: '07036',
-    addressCountry: 'US',
-  },
+  address: BODY_SHOP.postalAddress,
   geo: { '@type': 'GeoCoordinates', latitude: 40.6303, longitude: -74.2407 },
   openingHoursSpecification: [
     {
@@ -87,25 +57,17 @@ const autoBodyShopLd = {
   },
 }
 
-const breadcrumbLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Body Shop', item: SITE_URL + '/body-shop' },
-  ],
-}
-
 export default function Page() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(autoBodyShopLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      <JsonLd
+        data={[
+          autoBodyShopLd,
+          breadcrumbLd([
+            ['Home', '/'],
+            ['Body Shop', '/body-shop'],
+          ]),
+        ]}
       />
       <BodyShopContent />
     </>

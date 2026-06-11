@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, CheckCircle, Loader2, AlertCircle } from 'lucide-react'
+import { PHONE } from '@/lib/site'
 
 export default function ContactForm({ shopType = 'mechanical' }) {
   const [formData, setFormData] = useState({
@@ -93,7 +94,7 @@ export default function ContactForm({ shopType = 'mechanical' }) {
           Something Went Wrong
         </h3>
         <p className="text-red-600 dark:text-red-400">
-          Please try again or call us directly at (607) 251-1509
+          Please try again or call us directly at {PHONE.display}
         </p>
       </motion.div>
     )

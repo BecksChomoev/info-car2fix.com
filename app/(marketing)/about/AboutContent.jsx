@@ -20,6 +20,7 @@ import {
   Star,
   FileCheck,
 } from 'lucide-react'
+import { PHONE, MECH_SHOP, BODY_SHOP } from '@/lib/site'
 
 const stats = [
   { number: '2', label: 'Locations', suffix: '' },
@@ -88,11 +89,11 @@ export default function AboutContent() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="tel:6072511509"
+                href={PHONE.href}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                <span>Call (607) 251-1509</span>
+                <span>Call {PHONE.display}</span>
               </a>
               <Link
                 href="/mech-shop"
@@ -347,15 +348,15 @@ export default function AboutContent() {
                 <address className="not-italic space-y-3 mb-6">
                   <div className="flex items-start gap-3 text-gray-600 dark:text-gray-400">
                     <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                    <span>408 Carnegie Ave, Newark, NJ 07114</span>
+                    <span>{MECH_SHOP.address}</span>
                   </div>
                   <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                     <Clock className="w-5 h-5 flex-shrink-0" />
-                    <span>Mon-Fri: 8am-6pm | Sat: 8am-2pm</span>
+                    <span>{MECH_SHOP.hoursShort}</span>
                   </div>
                   <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                     <Phone className="w-5 h-5 flex-shrink-0" />
-                    <a href="tel:6072511509" className="hover:text-brand-blue">(607) 251-1509</a>
+                    <a href={PHONE.href} className="hover:text-brand-blue">{PHONE.display}</a>
                   </div>
                 </address>
 
@@ -392,15 +393,15 @@ export default function AboutContent() {
                 <address className="not-italic space-y-3 mb-6">
                   <div className="flex items-start gap-3 text-gray-600 dark:text-gray-400">
                     <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                    <span>1420 E Elizabeth Ave, Linden, NJ 07036</span>
+                    <span>{BODY_SHOP.address}</span>
                   </div>
                   <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                     <Clock className="w-5 h-5 flex-shrink-0" />
-                    <span>Mon-Fri: 8am-6pm</span>
+                    <span>{BODY_SHOP.hoursShort}</span>
                   </div>
                   <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                     <Phone className="w-5 h-5 flex-shrink-0" />
-                    <a href="tel:6072511509" className="hover:text-brand-red">(607) 251-1509</a>
+                    <a href={PHONE.href} className="hover:text-brand-red">{PHONE.display}</a>
                   </div>
                 </address>
 
@@ -432,11 +433,11 @@ export default function AboutContent() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:6072511509"
+              href={PHONE.href}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-red hover:bg-brand-red-dark text-white font-semibold rounded-full transition-all hover:shadow-xl hover:shadow-brand-red/25"
             >
               <Phone className="w-5 h-5" />
-              <span>Call (607) 251-1509</span>
+              <span>Call {PHONE.display}</span>
             </a>
             <Link
               href="/mech-shop#contact"

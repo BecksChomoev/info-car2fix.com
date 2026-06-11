@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Sun, Moon, Phone, Menu, X } from 'lucide-react'
+import { PHONE } from '@/lib/site'
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -33,6 +34,14 @@ export default function Navbar() {
   }, [darkMode])
 
   const toggleDarkMode = () => setDarkMode((v) => !v)
+
+  // Mech-shop, body-shop, and the per-service pages embed a contact form; on
+  // every other page the bare "#contact" anchor would silently do nothing.
+  const hasContactSection =
+    pathname === '/mech-shop' ||
+    pathname === '/body-shop' ||
+    pathname.endsWith('-newark-nj')
+  const bookHref = hasContactSection ? '#contact' : '/mech-shop#contact'
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
@@ -103,15 +112,15 @@ export default function Navbar() {
             </motion.button>
 
             <a
-              href="tel:6072511509"
+              href={PHONE.href}
               className="hidden md:flex items-center gap-2 text-gray-700 dark:text-gray-300 font-semibold"
             >
               <Phone className="w-4 h-4 text-brand-red" />
-              <span>(607) 251-1509</span>
+              <span>{PHONE.display}</span>
             </a>
 
             <a
-              href="#contact"
+              href={bookHref}
               className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-brand-red/25"
             >
               <span>Book Appointment</span>
@@ -156,15 +165,15 @@ export default function Navbar() {
               })}
               <div className="pt-4 space-y-3 border-t border-gray-100 dark:border-gray-800 mt-4">
                 <a
-                  href="tel:6072511509"
+                  href={PHONE.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center gap-2 px-4 py-4 bg-brand-red text-white font-semibold rounded-xl"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>Call (607) 251-1509</span>
+                  <span>Call {PHONE.display}</span>
                 </a>
                 <a
-                  href="#contact"
+                  href={bookHref}
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center gap-2 px-4 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold rounded-xl"
                 >

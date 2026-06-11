@@ -15,6 +15,7 @@ import {
   BadgeCheck,
 } from 'lucide-react'
 import GoogleReviews from '@/components/GoogleReviews'
+import { PHONE, MECH_SHOP, BODY_SHOP } from '@/lib/site'
 
 const features = [
   {
@@ -105,11 +106,11 @@ export default function HomeContent() {
 
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="tel:6072511509"
+                href={PHONE.href}
                 className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                <span className="font-semibold">(607) 251-1509</span>
+                <span className="font-semibold">{PHONE.display}</span>
               </a>
               <span className="text-white/40">|</span>
               <div className="flex items-center gap-2 text-white/80">
@@ -136,7 +137,7 @@ export default function HomeContent() {
                 <Wrench className="w-5 h-5" />
                 <div className="text-left">
                   <div className="font-semibold">Newark - Mechanical</div>
-                  <div className="text-sm text-white/70">408 Carnegie Ave</div>
+                  <div className="text-sm text-white/70">{MECH_SHOP.street}</div>
                 </div>
               </Link>
               <Link
@@ -146,7 +147,7 @@ export default function HomeContent() {
                 <Car className="w-5 h-5" />
                 <div className="text-left">
                   <div className="font-semibold">Linden - Body Shop</div>
-                  <div className="text-sm text-white/70">1420 E Elizabeth Ave</div>
+                  <div className="text-sm text-white/70">{BODY_SHOP.street}</div>
                 </div>
               </Link>
             </div>
@@ -181,11 +182,11 @@ export default function HomeContent() {
                 <address className="not-italic">
                   <div className="flex items-start gap-2 text-white/80 mb-2">
                     <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                    <span>408 Carnegie Ave, Newark, NJ 07114</span>
+                    <span>{MECH_SHOP.address}</span>
                   </div>
                   <div className="flex items-center gap-2 text-white/80 mb-6">
                     <Clock className="w-5 h-5 flex-shrink-0" />
-                    <span>Mon-Fri: 8am-6pm | Sat: 8am-2pm</span>
+                    <span>{MECH_SHOP.hoursShort}</span>
                   </div>
                 </address>
                 <Link
@@ -213,11 +214,11 @@ export default function HomeContent() {
                 <address className="not-italic">
                   <div className="flex items-start gap-2 text-white/80 mb-2">
                     <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                    <span>1420 E Elizabeth Ave, Linden, NJ 07036</span>
+                    <span>{BODY_SHOP.address}</span>
                   </div>
                   <div className="flex items-center gap-2 text-white/80 mb-6">
                     <Clock className="w-5 h-5 flex-shrink-0" />
-                    <span>Mon-Fri: 8am-6pm</span>
+                    <span>{BODY_SHOP.hoursShort}</span>
                   </div>
                 </address>
                 <Link
@@ -279,11 +280,11 @@ export default function HomeContent() {
             Two locations serving Newark &amp; Linden, NJ — call today
           </p>
           <a
-            href="tel:6072511509"
+            href={PHONE.href}
             className="inline-flex items-center gap-3 px-10 py-5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold text-lg rounded-full transition-all hover:shadow-xl hover:shadow-brand-red/25"
           >
             <Phone className="w-6 h-6" />
-            <span>(607) 251-1509</span>
+            <span>{PHONE.display}</span>
           </a>
         </div>
       </section>

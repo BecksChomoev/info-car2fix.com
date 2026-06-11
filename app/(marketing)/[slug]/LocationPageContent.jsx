@@ -4,20 +4,8 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
   Wrench,
-  Gauge,
-  Battery,
-  Disc,
-  Cog,
-  Wind,
-  Zap,
-  Droplets,
-  Settings,
-  LifeBuoy,
-  Flame,
-  ClipboardCheck,
   Car,
   MapPin,
-  Clock,
   Phone,
   BadgeCheck,
   Shield,
@@ -26,21 +14,8 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import FAQ from '@/components/FAQ'
-
-const ICONS = {
-  Wrench,
-  Gauge,
-  Battery,
-  Disc,
-  Cog,
-  Wind,
-  Zap,
-  Droplets,
-  Settings,
-  LifeBuoy,
-  Flame,
-  ClipboardCheck,
-}
+import { PHONE, MECH_SHOP, BODY_SHOP } from '@/lib/site'
+import { SERVICE_ICONS } from './icons'
 
 const trustPoints = [
   { icon: BadgeCheck, title: 'ASE & I-CAR Certified', text: 'Certified technicians at both shops, trained to manufacturer standards.' },
@@ -74,11 +49,11 @@ export default function LocationPageContent({ page, services }) {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:6072511509"
+                href={PHONE.href}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-brand-blue font-semibold rounded-full hover:bg-gray-100 transition-all hover:shadow-xl hover:shadow-white/25"
               >
                 <Phone className="w-5 h-5" />
-                <span>Call (607) 251-1509</span>
+                <span>Call {PHONE.display}</span>
               </a>
               <Link
                 href="/mech-shop#contact"
@@ -181,7 +156,7 @@ export default function LocationPageContent({ page, services }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service, index) => {
-              const Icon = ICONS[service.icon] || Wrench
+              const Icon = SERVICE_ICONS[service.icon] || Wrench
               return (
                 <motion.div
                   key={service.slug}
@@ -254,25 +229,25 @@ export default function LocationPageContent({ page, services }) {
             Serving {city} from Newark &amp; Linden — no obligation, no pressure
           </p>
           <a
-            href="tel:6072511509"
+            href={PHONE.href}
             className="inline-flex items-center gap-3 px-10 py-5 bg-brand-red hover:bg-brand-red-dark text-white font-semibold text-lg rounded-full transition-all hover:shadow-xl hover:shadow-brand-red/25 mb-10"
           >
             <Phone className="w-6 h-6" />
-            <span>(607) 251-1509</span>
+            <span>{PHONE.display}</span>
           </a>
           <div className="grid sm:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
             <div className="flex items-start gap-3 text-gray-300">
               <Wrench className="w-5 h-5 text-brand-blue flex-shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-white">Mechanical Shop</p>
-                <p className="text-sm text-gray-400">408 Carnegie Ave, Newark, NJ 07114<br />Mon-Fri 8am-6pm | Sat 8am-2pm</p>
+                <p className="text-sm text-gray-400">{MECH_SHOP.address}<br />{MECH_SHOP.hoursShort}</p>
               </div>
             </div>
             <div className="flex items-start gap-3 text-gray-300">
               <Car className="w-5 h-5 text-brand-red flex-shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-white">Body Shop</p>
-                <p className="text-sm text-gray-400">1420 E Elizabeth Ave, Linden, NJ 07036<br />Mon-Fri 8am-6pm</p>
+                <p className="text-sm text-gray-400">{BODY_SHOP.address}<br />{BODY_SHOP.hoursShort}</p>
               </div>
             </div>
           </div>

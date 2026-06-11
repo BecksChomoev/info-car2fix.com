@@ -27,6 +27,7 @@ import {
 import ServiceCard from '@/components/ServiceCard'
 import ContactForm from '@/components/ContactForm'
 import GoogleReviews from '@/components/GoogleReviews'
+import { PHONE, BODY_SHOP } from '@/lib/site'
 
 function BeforeAfterGallery() {
   const galleryItems = [
@@ -194,11 +195,11 @@ export default function BodyShopContent() {
             <address className="not-italic space-y-3 mb-8">
               <div className="flex items-center gap-2 text-white/90">
                 <MapPin className="w-5 h-5 text-white" />
-                <span>1420 E Elizabeth Ave, Linden, NJ 07036</span>
+                <span>{BODY_SHOP.address}</span>
               </div>
               <div className="flex items-center gap-2 text-white/90">
                 <Clock className="w-5 h-5 text-white" />
-                <span>Mon-Fri: 8am-6pm</span>
+                <span>{BODY_SHOP.hoursShort}</span>
               </div>
             </address>
 
@@ -211,11 +212,11 @@ export default function BodyShopContent() {
                 <span>Book Appointment</span>
               </a>
               <a
-                href="tel:6072511509"
+                href={PHONE.href}
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/20 transition-all border border-white/30"
               >
                 <Phone className="w-5 h-5" />
-                <span>(607) 251-1509</span>
+                <span>{PHONE.display}</span>
               </a>
             </div>
           </div>
@@ -336,8 +337,8 @@ export default function BodyShopContent() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
-                    <a href="tel:6072511509" className="text-brand-red hover:underline text-lg">
-                      (607) 251-1509
+                    <a href={PHONE.href} className="text-brand-red hover:underline text-lg">
+                      {PHONE.display}
                     </a>
                   </div>
                 </div>
@@ -349,12 +350,12 @@ export default function BodyShopContent() {
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Address</h3>
                     <a
-                      href="https://maps.google.com/?q=1420+E+Elizabeth+Ave+Linden+NJ+07036"
+                      href={BODY_SHOP.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-400 hover:text-brand-red"
                     >
-                      1420 E Elizabeth Ave<br />Linden, NJ 07036
+                      {BODY_SHOP.street}<br />{BODY_SHOP.cityStateZip}
                     </a>
                   </div>
                 </div>
