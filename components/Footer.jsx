@@ -14,8 +14,15 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-4 sm:mb-6">
               <img src="/logo.png" alt="Car2Fix" className="h-10 sm:h-12 w-auto brightness-0 invert" />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4 sm:mb-6">
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Quality repairs you can trust. Professional automotive services for all your mechanical and body work needs.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4 sm:mb-6">
+              Serving Newark,{' '}
+              <Link href="/auto-repair-linden-nj" className="hover:text-white transition-colors">Linden</Link>,{' '}
+              <Link href="/auto-repair-elizabeth-nj" className="hover:text-white transition-colors">Elizabeth</Link>,{' '}
+              <Link href="/auto-repair-hillside-nj" className="hover:text-white transition-colors">Hillside</Link>
+              {' '}&amp; surrounding NJ communities.
             </p>
           </div>
 
@@ -28,6 +35,7 @@ export default function Footer() {
                 { name: 'Mechanical Shop', path: '/mech-shop' },
                 { name: 'Body Shop', path: '/body-shop' },
                 { name: 'About Us', path: '/about' },
+                { name: 'FAQ', path: '/faq' },
               ].map((link) => (
                 <li key={link.path}>
                   <Link

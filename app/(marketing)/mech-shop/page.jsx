@@ -86,9 +86,12 @@ const autoRepairLd = {
       'Cooling System Repair',
       'A/C Service',
       'Suspension & Steering',
+      'Tire Service',
+      'Exhaust Repair',
       'Fuel System Repair',
       'Electrical Repairs',
       'Check Engine Light Diagnostics',
+      'Vehicle Inspections',
     ].map((name) => ({
       '@type': 'Offer',
       itemOffered: { '@type': 'Service', name },

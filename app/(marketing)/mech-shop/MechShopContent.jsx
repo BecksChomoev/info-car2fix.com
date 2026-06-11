@@ -14,6 +14,9 @@ import {
   Droplets,
   Settings,
   AlertTriangle,
+  LifeBuoy,
+  Flame,
+  ClipboardCheck,
   MapPin,
   Clock,
   Phone,
@@ -27,18 +30,21 @@ import ContactForm from '@/components/ContactForm'
 import GoogleReviews from '@/components/GoogleReviews'
 
 const services = [
-  { icon: Gauge, title: 'Engine Diagnostics', description: 'Advanced computer diagnostics to identify engine issues accurately and efficiently.' },
-  { icon: Wrench, title: 'Engine Repair', description: 'Complete engine repair and rebuilding services for all makes and models.' },
-  { icon: Cog, title: 'Transmission Service', description: 'Transmission repair, rebuild, and fluid services to keep you shifting smoothly.' },
-  { icon: Disc, title: 'Brake Services', description: 'Brake pad replacement, rotor resurfacing, and complete brake system repairs.' },
-  { icon: Droplets, title: 'Oil Change', description: 'Full synthetic, synthetic blend, and conventional oil changes with filter replacement.' },
-  { icon: Battery, title: 'Battery Service', description: 'Battery testing, replacement, and electrical system diagnostics.' },
+  { icon: Gauge, title: 'Engine Diagnostics', description: 'Advanced computer diagnostics to identify engine issues accurately and efficiently.', href: '/engine-diagnostics-newark-nj' },
+  { icon: Wrench, title: 'Engine Repair', description: 'Complete engine repair and rebuilding services for all makes and models.', href: '/engine-repair-newark-nj' },
+  { icon: Cog, title: 'Transmission Service', description: 'Transmission repair, rebuild, and fluid services to keep you shifting smoothly.', href: '/transmission-repair-newark-nj' },
+  { icon: Disc, title: 'Brake Services', description: 'Brake pad replacement, rotor resurfacing, and complete brake system repairs.', href: '/brake-repair-newark-nj' },
+  { icon: Droplets, title: 'Oil Change', description: 'Full synthetic, synthetic blend, and conventional oil changes with filter replacement.', href: '/oil-change-newark-nj' },
+  { icon: Battery, title: 'Battery Service', description: 'Battery testing, replacement, and electrical system diagnostics.', href: '/battery-replacement-newark-nj' },
   { icon: Thermometer, title: 'Cooling System', description: 'Radiator repair, coolant flush, thermostat replacement, and leak repairs.' },
-  { icon: Wind, title: 'A/C Service', description: 'Air conditioning diagnostics, recharge, and repair to keep you cool.' },
-  { icon: Settings, title: 'Suspension & Steering', description: 'Shocks, struts, tie rods, and alignment services for a smooth ride.' },
+  { icon: Wind, title: 'A/C Service', description: 'Air conditioning diagnostics, recharge, and repair to keep you cool.', href: '/ac-repair-newark-nj' },
+  { icon: Settings, title: 'Suspension & Steering', description: 'Shocks, struts, tie rods, and alignment services for a smooth ride.', href: '/suspension-repair-newark-nj' },
+  { icon: LifeBuoy, title: 'Tire Service', description: 'New tire mounting and balancing, rotation, flat repair, and TPMS service.', href: '/tire-service-newark-nj' },
+  { icon: Flame, title: 'Exhaust Repair', description: 'Muffler, pipe, catalytic converter, and oxygen sensor repair and replacement.', href: '/exhaust-repair-newark-nj' },
   { icon: Fuel, title: 'Fuel System', description: 'Fuel pump, fuel injector, and fuel filter services and repairs.' },
-  { icon: Zap, title: 'Electrical Repairs', description: 'Starter, alternator, wiring, and all electrical system diagnostics and repairs.' },
-  { icon: AlertTriangle, title: 'Check Engine Light', description: 'Diagnostic services to identify and resolve check engine light issues.' },
+  { icon: Zap, title: 'Electrical Repairs', description: 'Starter, alternator, wiring, and all electrical system diagnostics and repairs.', href: '/auto-electrical-repair-newark-nj' },
+  { icon: AlertTriangle, title: 'Check Engine Light', description: 'Diagnostic services to identify and resolve check engine light issues.', href: '/engine-diagnostics-newark-nj' },
+  { icon: ClipboardCheck, title: 'Car Inspection', description: 'Pre-purchase and multi-point inspections, plus failed NJ inspection repairs.', href: '/car-inspection-newark-nj' },
 ]
 
 export default function MechShopContent() {
@@ -154,6 +160,7 @@ export default function MechShopContent() {
                 description={service.description}
                 delay={index * 0.05}
                 variant="blue"
+                href={service.href}
               />
             ))}
           </div>

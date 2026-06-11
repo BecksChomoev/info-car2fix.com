@@ -32,9 +32,12 @@ Website: https://www.car2fix.com
 - Cooling system repair (radiator, coolant flush, thermostat)
 - A/C diagnostics and repair
 - Suspension and steering (shocks, struts, alignment)
+- Tire service (mounting, balancing, rotation, flat repair, TPMS)
+- Exhaust repair (mufflers, pipes, catalytic converters, O2 sensors)
 - Fuel system repair (pump, injectors, filter)
 - Electrical system diagnostics and repair
 - Check engine light diagnostics
+- Vehicle inspections (pre-purchase, multi-point, failed NJ inspection repair)
 
 ### Body Shop (Linden, NJ)
 - Collision repair (restoring vehicles to pre-accident condition)
@@ -87,3 +90,25 @@ Car2Fix works directly with major insurance providers and handles the full claim
 - [Mechanical Shop](https://www.car2fix.com/mech-shop)
 - [Body Shop](https://www.car2fix.com/body-shop)
 - [About Us](https://www.car2fix.com/about)
+- [FAQ](https://www.car2fix.com/faq)
+
+### Service Pages (Newark, NJ)
+
+- [Brake Repair](https://www.car2fix.com/brake-repair-newark-nj)
+- [Engine Repair](https://www.car2fix.com/engine-repair-newark-nj)
+- [Engine Diagnostics](https://www.car2fix.com/engine-diagnostics-newark-nj)
+- [Transmission Repair](https://www.car2fix.com/transmission-repair-newark-nj)
+- [Oil Change](https://www.car2fix.com/oil-change-newark-nj)
+- [Suspension Repair](https://www.car2fix.com/suspension-repair-newark-nj)
+- [AC Repair](https://www.car2fix.com/ac-repair-newark-nj)
+- [Battery Replacement](https://www.car2fix.com/battery-replacement-newark-nj)
+- [Tire Service](https://www.car2fix.com/tire-service-newark-nj)
+- [Exhaust Repair](https://www.car2fix.com/exhaust-repair-newark-nj)
+- [Auto Electrical Repair](https://www.car2fix.com/auto-electrical-repair-newark-nj)
+- [Car Inspection](https://www.car2fix.com/car-inspection-newark-nj)
+
+### Service Area Pages
+
+- [Auto Repair in Elizabeth, NJ](https://www.car2fix.com/auto-repair-elizabeth-nj)
+- [Auto Repair in Linden, NJ](https://www.car2fix.com/auto-repair-linden-nj)
+- [Auto Repair in Hillside, NJ](https://www.car2fix.com/auto-repair-hillside-nj)

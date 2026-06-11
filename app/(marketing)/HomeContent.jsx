@@ -15,8 +15,6 @@ import {
   BadgeCheck,
 } from 'lucide-react'
 import GoogleReviews from '@/components/GoogleReviews'
-import FAQ from '@/components/FAQ'
-import { homeFaqs } from '@/lib/faqs'
 
 const features = [
   {
@@ -271,8 +269,6 @@ export default function HomeContent() {
       </section>
 
       <GoogleReviews variant="light" shopType="both" />
-
-      <FAQ items={homeFaqs} />
 
       <section className="py-20 bg-gray-900 dark:bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

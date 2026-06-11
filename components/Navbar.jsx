@@ -11,6 +11,7 @@ const navLinks = [
   { name: 'Mechanical Shop', path: '/mech-shop' },
   { name: 'Body Shop', path: '/body-shop' },
   { name: 'About Us', path: '/about' },
+  { name: 'FAQ', path: '/faq' },
 ]
 
 export default function Navbar() {
