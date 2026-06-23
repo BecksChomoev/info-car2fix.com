@@ -1,6 +1,6 @@
 import BodyShopContent from './BodyShopContent'
 import JsonLd from '@/components/JsonLd'
-import { SITE_URL, PHONE, BODY_SHOP, pageMetadata, breadcrumbLd } from '@/lib/site'
+import { SITE_URL, BODY_SHOP, pageMetadata, breadcrumbLd } from '@/lib/site'
 
 export const metadata = pageMetadata({
   title: 'Body Shop in Linden, NJ | Collision Repair | Car2Fix',
@@ -18,7 +18,7 @@ const autoBodyShopLd = {
   name: BODY_SHOP.name,
   url: SITE_URL + '/body-shop',
   image: SITE_URL + '/logo.png',
-  telephone: PHONE.e164,
+  telephone: BODY_SHOP.phone.e164,
   priceRange: '$$',
   address: BODY_SHOP.postalAddress,
   geo: { '@type': 'GeoCoordinates', latitude: 40.6303, longitude: -74.2407 },

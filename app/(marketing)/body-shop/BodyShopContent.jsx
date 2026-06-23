@@ -27,7 +27,7 @@ import {
 import ServiceCard from '@/components/ServiceCard'
 import ContactForm from '@/components/ContactForm'
 import GoogleReviews from '@/components/GoogleReviews'
-import { PHONE, BODY_SHOP } from '@/lib/site'
+import { BODY_SHOP } from '@/lib/site'
 
 function BeforeAfterGallery() {
   const galleryItems = [
@@ -212,11 +212,11 @@ export default function BodyShopContent() {
                 <span>Book Appointment</span>
               </a>
               <a
-                href={PHONE.href}
+                href={BODY_SHOP.phone.href}
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/20 transition-all border border-white/30"
               >
                 <Phone className="w-5 h-5" />
-                <span>{PHONE.display}</span>
+                <span>{BODY_SHOP.phone.display}</span>
               </a>
             </div>
           </div>
@@ -337,8 +337,8 @@ export default function BodyShopContent() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
-                    <a href={PHONE.href} className="text-brand-red hover:underline text-lg">
-                      {PHONE.display}
+                    <a href={BODY_SHOP.phone.href} className="text-brand-red hover:underline text-lg">
+                      {BODY_SHOP.phone.display}
                     </a>
                   </div>
                 </div>

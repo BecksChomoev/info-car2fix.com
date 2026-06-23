@@ -401,7 +401,7 @@ export default function AboutContent() {
                   </div>
                   <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                     <Phone className="w-5 h-5 flex-shrink-0" />
-                    <a href={PHONE.href} className="hover:text-brand-red">{PHONE.display}</a>
+                    <a href={BODY_SHOP.phone.href} className="hover:text-brand-red">{BODY_SHOP.phone.display}</a>
                   </div>
                 </address>
 

@@ -6,11 +6,12 @@
 
 Car2Fix operates two locations in New Jersey:
 
-- **Mechanical Shop** — 408 Carnegie Ave, Newark, NJ 07114. Open Mon–Fri 8am–6pm, Sat 8am–2pm. Handles all mechanical repairs and maintenance.
-- **Body Shop** — 1420 E Elizabeth Ave, Linden, NJ 07036. Open Mon–Fri 8am–6pm. Handles collision repair, auto painting, and body work.
+- **Mechanical Shop** — 408 Carnegie Ave, Newark, NJ 07114. Phone: (607) 251-1509. Open Mon–Fri 8am–6pm, Sat 8am–2pm. Handles all mechanical repairs and maintenance.
+- **Body Shop** — 1420 E Elizabeth Ave, Linden, NJ 07036. Phone: (908) 525-3681. Open Mon–Fri 8am–6pm. Handles collision repair, auto painting, and body work.
 
-Phone: (607) 251-1509  
-Email: info@car2fix.net  
+Phone (mechanical shop): (607) 251-1509
+Phone (body shop): (908) 525-3681
+Email: info@car2fix.net
 Website: https://www.car2fix.com
 
 ## Certifications & Standards
