@@ -117,7 +117,7 @@ export default function Navbar() {
                 className="group flex items-center gap-2"
               >
                 <Phone className="w-3.5 h-3.5 text-brand-blue shrink-0" />
-                <span className="w-16 text-xs font-medium text-gray-500 dark:text-gray-400">MS</span>
+                <span className="w-28 text-xs font-medium text-gray-500 dark:text-gray-400">Mechanical Shop</span>
                 <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-brand-blue transition-colors">{PHONE.display}</span>
               </a>
               <a
@@ -125,7 +125,7 @@ export default function Navbar() {
                 className="group flex items-center gap-2"
               >
                 <Phone className="w-3.5 h-3.5 text-brand-red shrink-0" />
-                <span className="w-16 text-xs font-medium text-gray-500 dark:text-gray-400">Body Shop</span>
+                <span className="w-28 text-xs font-medium text-gray-500 dark:text-gray-400">Body Shop</span>
                 <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-brand-red transition-colors">{BODY_SHOP.phone.display}</span>
               </a>
             </div>
@@ -181,7 +181,7 @@ export default function Navbar() {
                   className="flex items-center justify-center gap-2 px-4 py-4 bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold rounded-xl transition-colors"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>MS · {PHONE.display}</span>
+                  <span>Mechanical Shop · {PHONE.display}</span>
                 </a>
                 <a
                   href={BODY_SHOP.phone.href}
