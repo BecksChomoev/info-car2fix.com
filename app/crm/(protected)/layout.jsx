@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { LogOut } from 'lucide-react'
 import { requireCrmAuth } from '@/lib/crm-auth'
 import { logoutAction } from '@/app/crm/actions'
+import CrmNav from '@/components/crm/CrmNav'
 
 export const metadata = {
   title: 'CRM',
@@ -33,6 +34,7 @@ export default async function CrmProtectedLayout({ children }) {
             </button>
           </form>
         </div>
+        <CrmNav />
       </header>
       {children}
     </div>

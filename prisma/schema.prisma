@@ -14,6 +14,78 @@ datasource db {
   provider = "postgresql"
 }
 
+/// A referral source that sends us customers — towing companies today, possibly
+/// insurance adjusters or rental agencies later. Commission terms live here so
+/// each referral can compute its payout at approval time.
+model ReferralPartner {
+  id             String   @id @default(cuid())
+  name           String
+  contactName    String?
+  phone          String?
+  type           String   @default("towing") // towing | insurance | rental | other
+  commissionType String   @default("percent") // percent (of invoice) | flat (per referral)
+  commissionRate Int      @default(10) // percent value (10 = 10%) or flat whole US dollars
+  active         Boolean  @default(true)
+  notes          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  referrals Referral[]
+
+  @@index([active])
+}
+
+/// One referred customer/job. Lifecycle:
+/// received -> invoice_uploaded -> approved -> paid, with rejected as a detour
+/// (shop can re-attach a corrected invoice, returning it to invoice_uploaded).
+/// Money fields are whole US dollars, matching Lead.value.
+model Referral {
+  id             String  @id @default(cuid())
+  partnerId      String
+  partner        ReferralPartner @relation(fields: [partnerId], references: [id])
+  customerName   String
+  customerPhone  String?
+  vehicle        String?
+  jobDescription String?
+  shopType       String // 'mechanical' | 'body'
+  status         String  @default("received") // received | invoice_uploaded | approved | rejected | paid
+
+  invoiceNumber     String?
+  invoiceAmount     Int? // final invoice total in whole US dollars
+  invoiceUrl        String? // private Vercel Blob URL; served via /api/crm/referrals/[id]/invoice
+  invoiceUploadedAt DateTime?
+
+  commissionAmount Int? // whole US dollars, set at approval (computed from partner terms, admin may override)
+  approvedAt       DateTime?
+  rejectedReason   String?
+  paidAt           DateTime?
+  paidBy           String? // name of the person who handed the cash to the partner
+
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([partnerId])
+  @@index([shopType])
+  @@index([createdAt])
+  @@index([approvedAt])
+  @@index([paidAt])
+}
+
+/// Cash handed TO a shop to fund referral payouts. Reconciliation per shop:
+/// sum(advances) - sum(paid commissions) = cash that should be in the drawer.
+model CashAdvance {
+  id        String   @id @default(cuid())
+  shopType  String // 'mechanical' | 'body'
+  amount    Int // whole US dollars
+  note      String?
+  createdAt DateTime @default(now())
+
+  @@index([shopType])
+  @@index([createdAt])
+}
+
 /// A sales lead captured from the website contact form. The CRM board groups
 /// these by `stage`; marketing moves them through the pipeline.
 model Lead {

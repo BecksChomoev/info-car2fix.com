@@ -3,17 +3,18 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { prisma } from '@/lib/prisma'
-import { requireCrmAuth, verifyPassword, startSession, endSession } from '@/lib/crm-auth'
+import { requireCrmAuth, resolveLoginRole, startSession, endSession } from '@/lib/crm-auth'
 import { STAGE_KEYS } from '@/lib/stages'
 
 // --- Auth ---
 
 export async function loginAction(prevState, formData) {
   const password = formData.get('password')
-  if (typeof password !== 'string' || !verifyPassword(password)) {
+  const role = typeof password === 'string' ? resolveLoginRole(password) : null
+  if (!role) {
     return { error: 'Incorrect password. Please try again.' }
   }
-  await startSession()
+  await startSession(role)
   redirect('/crm')
 }
 
