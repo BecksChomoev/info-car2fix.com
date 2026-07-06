@@ -177,7 +177,7 @@ export default function ServicePageContent({ page, related }) {
 
       <FAQ
         items={page.faqs}
-        heading={`${page.name} FAQs`}
+        heading={`${page.name} FAQs — Newark, NJ`}
         subheading="Straight answers from our Newark technicians"
       />
 
