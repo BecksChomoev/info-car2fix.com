@@ -86,22 +86,89 @@ model CashAdvance {
   @@index([createdAt])
 }
 
-/// A sales lead captured from the website contact form. The CRM board groups
-/// these by `stage`; marketing moves them through the pipeline.
+/// A sales lead captured from the website contact form or auto-created from an
+/// inbound phone call (source 'phone_call'). The CRM board groups these by
+/// `stage`; marketing moves them through the pipeline.
 model Lead {
   id        String   @id @default(cuid())
   name      String
   phone     String
+  phoneE164 String? // normalized +1XXXXXXXXXX; the join key for matching RingCentral callers
   carModel  String
   issue     String
   shopType  String // 'mechanical' | 'body'
-  source    String   @default("website_form")
+  source    String   @default("website_form") // website_form | phone_call
   stage     String   @default("new") // new | contacted | estimate_sent | scheduled | in_service | completed | lost
   value     Int? // estimated job value in whole US dollars, editable in the CRM
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  calls Call[]
+
   @@index([stage])
   @@index([shopType])
   @@index([createdAt])
+  @@index([phoneE164])
+}
+
+/// One phone call ingested from RingCentral (call-log sync cron and/or the
+/// telephony webhook). RingCentral purges recordings after 90 days and call
+/// logs after ~12 months, so this table plus the private Blob store is the
+/// long-term system of record. Matched to a Lead by the customer's E.164 number.
+model Call {
+  id                 String  @id @default(cuid())
+  // RingCentral call-log record id. Webhook-created stubs use
+  // 'tsess:{telephonySessionId}' until the next sync merges the real record in.
+  rcCallId           String  @unique
+  sessionId          String?
+  telephonySessionId String?
+  direction          String // 'Inbound' | 'Outbound'
+  fromNumber         String? // E.164 as reported by RingCentral
+  fromName           String? // best-effort caller ID (often a city/state or 'WIRELESS CALLER')
+  fromLocation       String?
+  toNumber           String?
+  shopType           String // 'mechanical' | 'body' — derived from the shop line the customer dialed
+  result             String // RingCentral result: Accepted | Missed | Voicemail | Busy | No Answer | ...
+  action             String?
+  transport          String?
+  startTime          DateTime
+  durationSec        Int      @default(0)
+
+  recordingRcId        String?
+  recordingContentUri  String? // media.ringcentral.com download URL (valid ~90 days)
+  recordingBlobUrl     String? // our private Blob copy — set once archived
+  recordingContentType String?
+  recordingError       String? // set when the download permanently failed; stops retries
+
+  vmMessageUri       String? // message-store URI of the voicemail left on this call
+  vmStatus           String? // null=pending | InProgress | Completed | NotAvailable | TimedOut
+  vmTranscript       String?
+  vmAudioBlobUrl     String?
+  vmAudioContentType String?
+
+  leadId          String?
+  lead            Lead?    @relation(fields: [leadId], references: [id])
+  leadAutoCreated Boolean  @default(false)
+  alertedAt       DateTime? // missed-call/voicemail Telegram alert sent
+  vmAlertedAt     DateTime? // follow-up alert with the voicemail transcript sent
+
+  rcRaw     Json? // raw RingCentral record, kept for debugging a blind integration
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([startTime])
+  @@index([leadId])
+  @@index([shopType])
+  @@index([result])
+  @@index([telephonySessionId])
+}
+
+/// Singleton cursor + advisory lock for the RingCentral call-log-sync endpoint.
+model RcSyncState {
+  id         String    @id @default("singleton")
+  syncToken  String?
+  lastSyncAt DateTime?
+  lastError  String?
+  lockedAt   DateTime? // set while a sync run is in flight; stale after 3 minutes
+  updatedAt  DateTime  @updatedAt
 }

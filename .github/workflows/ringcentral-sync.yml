@@ -1,0 +1,34 @@
+# Polls the RingCentral call-log sync endpoint every ~5 minutes. Vercel's Hobby
+# plan only allows daily crons, so this workflow provides the near-real-time
+# cadence; the daily Vercel cron (vercel.json) is the reconciliation backstop.
+#
+# Requires the CRON_SECRET repository secret (same value as the Vercel env var).
+# Until that secret is set, runs exit quietly without failing.
+
+name: RingCentral call sync
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: ringcentral-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Trigger sync endpoint
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -z "$CRON_SECRET" ]; then
+            echo "CRON_SECRET secret not configured yet — skipping."
+            exit 0
+          fi
+          curl --silent --show-error --fail --max-time 120 \
+            -H "Authorization: Bearer $CRON_SECRET" \
+            https://www.car2fix.com/api/crm/calls/sync

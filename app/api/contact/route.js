@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import { toE164 } from '@/lib/phone'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.car2fix.com'
 
@@ -21,6 +22,7 @@ export async function POST(request) {
         data: {
           name,
           phone,
+          phoneE164: toE164(phone), // join key for matching RingCentral callers
           carModel,
           issue,
           shopType: normalizedShopType,
