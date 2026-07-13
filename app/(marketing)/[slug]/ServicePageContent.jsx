@@ -9,13 +9,13 @@ import {
   Award,
   BadgeCheck,
   Shield,
-  CalendarCheck,
   CheckCircle,
   AlertTriangle,
   ArrowRight,
   DollarSign,
 } from 'lucide-react'
 import ServiceCard from '@/components/ServiceCard'
+import ServiceHero from '@/components/ServiceHero'
 import ContactForm from '@/components/ContactForm'
 import FAQ from '@/components/FAQ'
 import { PHONE, MECH_SHOP } from '@/lib/site'
@@ -29,58 +29,9 @@ const trustPoints = [
 ]
 
 export default function ServicePageContent({ page, related }) {
-  const HeroIcon = SERVICE_ICONS[page.icon] || SERVICE_ICONS.Wrench
-
   return (
     <div>
-      <section className="relative py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue-dark to-blue-900" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20">
-              <HeroIcon className="w-4 h-4" />
-              <span>Mechanical Services • Newark, NJ</span>
-            </span>
-
-            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-              {page.h1}
-            </h1>
-
-            <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl">
-              {page.intro}
-            </p>
-
-            <address className="not-italic space-y-3 mb-8">
-              <div className="flex items-center gap-2 text-white/90">
-                <MapPin className="w-5 h-5 flex-shrink-0 text-white" />
-                <span>{MECH_SHOP.address}</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/90">
-                <Clock className="w-5 h-5 flex-shrink-0 text-white" />
-                <span>{MECH_SHOP.hoursShort}</span>
-              </div>
-            </address>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#contact"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-brand-blue font-semibold rounded-full hover:bg-gray-100 transition-all hover:shadow-xl hover:shadow-white/25"
-              >
-                <CalendarCheck className="w-5 h-5" />
-                <span>Get a Free Estimate</span>
-              </a>
-              <a
-                href={PHONE.href}
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/20 transition-all border border-white/30"
-              >
-                <Phone className="w-5 h-5" />
-                <span>{PHONE.display}</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero page={page} />
 
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
