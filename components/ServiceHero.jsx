@@ -151,7 +151,7 @@ export default function ServiceHero({ page }) {
             initial={{ opacity: 0, y: 24, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-2 lg:mt-0 flex justify-center lg:justify-end lg:flex-1"
+            className="mt-2 lg:mt-0 -mb-8 sm:-mb-10 lg:mb-0 flex justify-center lg:justify-end lg:flex-1"
           >
             <div
               className={`relative block ${art.mobile || 'w-[86%] max-w-[400px]'} mx-auto lg:mx-0 lg:inline-block lg:w-auto lg:max-w-full`}
