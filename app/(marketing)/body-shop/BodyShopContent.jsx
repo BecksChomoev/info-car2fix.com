@@ -212,7 +212,7 @@ export default function BodyShopContent() {
 
           <div className="lg:hidden mt-10 -mx-4 sm:mx-0 flex justify-center">
             <motion.img
-              src="/BodyShop.png"
+              src="/bodyshop-hero-mobile.webp"
               alt="Car2Fix body shop in Linden, NJ"
               className="w-[112%] max-w-[520px] sm:w-full object-contain drop-shadow-2xl"
               initial={{ opacity: 0, y: 24 }}

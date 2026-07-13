@@ -111,7 +111,7 @@ export default function HomeContent() {
 
           <div className="lg:hidden mt-10 -mx-4 sm:mx-0 flex justify-center">
             <motion.img
-              src="/home.png"
+              src="/home-hero-mobile.webp"
               alt="Car2Fix automotive repair services in Newark and Linden, New Jersey"
               className="w-[112%] max-w-[520px] sm:w-full object-contain drop-shadow-2xl"
               initial={{ opacity: 0, y: 24 }}

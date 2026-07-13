@@ -177,7 +177,7 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="absolute -bottom-6 -left-6 p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700"
+                className="absolute -bottom-6 -left-2 sm:-left-6 p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center">
@@ -193,7 +193,7 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="absolute -top-6 -right-6 p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700"
+                className="absolute -top-6 -right-2 sm:-right-6 p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center">
