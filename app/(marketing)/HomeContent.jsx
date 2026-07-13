@@ -109,7 +109,7 @@ export default function HomeContent() {
             </div>
           </div>
 
-          <div className="lg:hidden mt-10 -mx-4 sm:mx-0 flex justify-center">
+          <div className="lg:hidden mt-10 -mx-4 sm:mx-0 -mb-8 sm:-mb-10 flex justify-center">
             <motion.img
               src="/home-hero-mobile.webp"
               alt="Car2Fix automotive repair services in Newark and Linden, New Jersey"
