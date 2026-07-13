@@ -45,7 +45,7 @@ export default function Page() {
         subheading="Don't see your question? Call us — a real person picks up."
       />
 
-      <section className="py-16 bg-gray-900 dark:bg-black">
+      <section className="py-12 lg:py-16 bg-gray-900 dark:bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display font-bold text-3xl text-white mb-4">
             Still Have Questions?

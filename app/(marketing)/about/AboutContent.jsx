@@ -66,7 +66,7 @@ const commitments = [
 export default function AboutContent() {
   return (
     <div>
-      <section className="relative py-20 lg:py-28 overflow-hidden">
+      <section className="relative py-16 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-brand-blue-dark to-gray-900" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,7 +130,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-14 lg:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -210,7 +210,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-950">
+      <section className="py-14 lg:py-20 bg-gray-50 dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-flex items-center gap-2 text-brand-blue font-semibold mb-4">
@@ -249,7 +249,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-14 lg:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -314,7 +314,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-950">
+      <section className="py-14 lg:py-20 bg-gray-50 dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 text-brand-blue font-semibold mb-4">
@@ -423,7 +423,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-900 dark:bg-black">
+      <section className="py-14 lg:py-20 bg-gray-900 dark:bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
             Ready to Experience Honest Auto Repair?

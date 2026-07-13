@@ -80,7 +80,7 @@ export default function ServiceHero({ page }) {
   const h1Line2 = splitIndex === -1 ? null : page.h1.slice(splitIndex + 1)
 
   return (
-    <section className="relative overflow-hidden bg-[#273990] py-12 sm:py-14 lg:py-16 xl:py-20">
+    <section className="relative overflow-hidden bg-[#273990] pt-12 pb-8 sm:pt-14 sm:pb-10 lg:py-16 xl:py-20">
       <div
         className="absolute inset-0"
         style={{

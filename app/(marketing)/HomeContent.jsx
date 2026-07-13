@@ -43,7 +43,7 @@ const features = [
 export default function HomeContent() {
   return (
     <div className="overflow-hidden">
-      <section className="relative overflow-hidden py-12 sm:py-16 lg:py-0 lg:min-h-[90vh] lg:flex lg:items-center">
+      <section className="relative overflow-hidden pt-12 pb-8 sm:pt-16 sm:pb-10 lg:py-0 lg:min-h-[90vh] lg:flex lg:items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue-dark to-brand-red-dark" />
 
         <div className="absolute right-0 bottom-0 w-[55%] h-full hidden lg:flex items-end justify-center">
@@ -155,7 +155,7 @@ export default function HomeContent() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-14 lg:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl sm:text-5xl text-gray-900 dark:text-white mb-4">
@@ -234,7 +234,7 @@ export default function HomeContent() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-950">
+      <section className="py-14 lg:py-20 bg-gray-50 dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl sm:text-5xl text-gray-900 dark:text-white mb-4">
@@ -271,7 +271,7 @@ export default function HomeContent() {
 
       <GoogleReviews variant="light" shopType="both" />
 
-      <section className="py-20 bg-gray-900 dark:bg-black">
+      <section className="py-14 lg:py-20 bg-gray-900 dark:bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display font-bold text-4xl sm:text-5xl text-white mb-6">
             Get a Free Estimate at Our Mechanical &amp; Body Shop

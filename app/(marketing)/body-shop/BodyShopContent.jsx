@@ -45,7 +45,7 @@ function BeforeAfterGallery() {
   const current = galleryItems[currentIndex]
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-14 lg:py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-display font-bold text-4xl text-gray-900 dark:text-white mb-4">
@@ -149,7 +149,7 @@ const services = [
 export default function BodyShopContent() {
   return (
     <div>
-      <section className="relative overflow-hidden py-12 sm:py-16 lg:py-0 lg:min-h-[80vh] lg:flex lg:items-center">
+      <section className="relative overflow-hidden pt-12 pb-8 sm:pt-16 sm:pb-10 lg:py-0 lg:min-h-[80vh] lg:flex lg:items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-red via-brand-red-dark to-red-900" />
 
         <div className="absolute right-0 bottom-0 w-[55%] h-full hidden lg:flex items-end justify-center">
@@ -223,7 +223,7 @@ export default function BodyShopContent() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-950">
+      <section className="py-14 lg:py-20 bg-gray-50 dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl text-gray-900 dark:text-white mb-4">
@@ -249,7 +249,7 @@ export default function BodyShopContent() {
         </div>
       </section>
 
-      <section className="py-16 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
+      <section className="py-12 lg:py-16 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display font-bold text-3xl text-gray-900 dark:text-white mb-4">
@@ -297,7 +297,7 @@ export default function BodyShopContent() {
 
       <BeforeAfterGallery />
 
-      <section className="py-16 bg-gray-50 dark:bg-gray-950">
+      <section className="py-12 lg:py-16 bg-gray-50 dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Shield className="w-12 h-12 text-brand-red mx-auto mb-4" />
@@ -318,7 +318,7 @@ export default function BodyShopContent() {
         heading="What Linden Customers Say"
       />
 
-      <section id="contact" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24">
+      <section id="contact" className="py-14 lg:py-20 bg-white dark:bg-gray-900 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
