@@ -149,7 +149,7 @@ const services = [
 export default function BodyShopContent() {
   return (
     <div>
-      <section className="relative min-h-[100svh] sm:min-h-[80vh] flex items-start sm:items-center overflow-hidden">
+      <section className="relative overflow-hidden py-12 sm:py-16 lg:py-0 lg:min-h-[80vh] lg:flex lg:items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-red via-brand-red-dark to-red-900" />
 
         <div className="absolute right-0 bottom-0 w-[55%] h-full hidden lg:flex items-end justify-center">
@@ -163,19 +163,8 @@ export default function BodyShopContent() {
           />
         </div>
 
-        <div className="absolute left-0 right-0 bottom-0 h-[35vh] sm:h-[40vh] lg:hidden flex items-end justify-center pointer-events-none">
-          <motion.img
-            src="/BodyShop.png"
-            alt="Car2Fix body shop in Linden, NJ"
-            className="w-auto h-full max-w-[90%] object-contain drop-shadow-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:py-20 w-full">
-          <div className="max-w-xl lg:pb-0 pb-[38vh] sm:pb-[42vh]">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-20 w-full">
+          <div className="max-w-xl">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20">
               <Car className="w-4 h-4" />
               <span>Body Shop Services</span>
@@ -219,6 +208,17 @@ export default function BodyShopContent() {
                 <span>{BODY_SHOP.phone.display}</span>
               </a>
             </div>
+          </div>
+
+          <div className="lg:hidden mt-10 -mx-4 sm:mx-0 flex justify-center">
+            <motion.img
+              src="/BodyShop.png"
+              alt="Car2Fix body shop in Linden, NJ"
+              className="w-[112%] max-w-[520px] sm:w-full object-contain drop-shadow-2xl"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            />
           </div>
         </div>
       </section>
