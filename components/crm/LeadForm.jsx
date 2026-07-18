@@ -29,9 +29,9 @@ export default function LeadForm() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            Vehicle *
+            Vehicle
           </label>
-          <input name="carModel" required placeholder="2019 Honda Accord" className={inputCls} />
+          <input name="carModel" placeholder="2019 Honda Accord" className={inputCls} />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Shop *</label>

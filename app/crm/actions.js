@@ -52,7 +52,8 @@ export async function updateLeadValue(leadId, rawValue) {
 // shape (including phoneE164 normalization, the join key for future calls) but,
 // unlike a web submission, lets staff set the starting stage and estimated
 // value up front. Used with useActionState: returns { error } to the form on
-// bad input, redirects to the new lead on success. No Telegram ping — the
+// bad input, redirects back to the board on success (staff add these in
+// batches, so land them back where they started). No Telegram ping — the
 // person entering it is already the one who needs to know.
 export async function createLead(prevState, formData) {
   await requireCrmAuth()
@@ -64,10 +65,8 @@ export async function createLead(prevState, formData) {
 
   const name = s('name')
   const phone = s('phone')
-  const carModel = s('carModel')
   if (!name) return { error: 'Customer name is required.' }
   if (!phone) return { error: 'Phone number is required.' }
-  if (!carModel) return { error: 'Vehicle is required.' }
 
   const stageRaw = s('stage')
   const stage = STAGE_KEYS.includes(stageRaw) ? stageRaw : 'new'
@@ -85,12 +84,12 @@ export async function createLead(prevState, formData) {
     value = Math.round(n)
   }
 
-  const lead = await prisma.lead.create({
+  await prisma.lead.create({
     data: {
       name,
       phone,
       phoneE164: toE164(phone),
-      carModel,
+      carModel: s('carModel'),
       issue: s('issue'),
       shopType: s('shopType') === 'body' ? 'body' : 'mechanical',
       source: 'manual',
@@ -99,5 +98,5 @@ export async function createLead(prevState, formData) {
     },
   })
   revalidatePath('/crm')
-  redirect(`/crm/leads/${lead.id}`)
+  redirect('/crm')
 }

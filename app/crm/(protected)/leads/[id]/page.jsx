@@ -41,7 +41,7 @@ export default async function LeadDetailPage({ params }) {
               {lead.phone}
             </a>
           </Field>
-          <Field label="Vehicle">{lead.carModel}</Field>
+          <Field label="Vehicle">{lead.carModel || '—'}</Field>
           <Field label="Issue">
             <span className="whitespace-pre-wrap">{lead.issue || '—'}</span>
           </Field>
