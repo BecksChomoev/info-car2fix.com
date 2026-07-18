@@ -97,7 +97,7 @@ model Lead {
   carModel  String
   issue     String
   shopType  String // 'mechanical' | 'body'
-  source    String   @default("website_form") // website_form | phone_call
+  source    String   @default("website_form") // website_form | phone_call | manual
   stage     String   @default("new") // new | contacted | estimate_sent | scheduled | in_service | completed | lost
   value     Int? // estimated job value in whole US dollars, editable in the CRM
   createdAt DateTime @default(now())

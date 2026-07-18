@@ -43,7 +43,7 @@ export default async function LeadDetailPage({ params }) {
           </Field>
           <Field label="Vehicle">{lead.carModel}</Field>
           <Field label="Issue">
-            <span className="whitespace-pre-wrap">{lead.issue}</span>
+            <span className="whitespace-pre-wrap">{lead.issue || '—'}</span>
           </Field>
           <Field label="Source">{lead.source}</Field>
           <Field label="Received">{formatDateTime(lead.createdAt)}</Field>

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { Plus } from 'lucide-react'
 import { prisma } from '@/lib/prisma'
 import { requireCrmAuth } from '@/lib/crm-auth'
 import Board from '@/components/crm/Board'
@@ -26,7 +28,16 @@ export default async function CrmBoardPage({ searchParams }) {
             {shopLabel}
           </p>
         </div>
-        <ShopFilter active={shop} />
+        <div className="flex items-center gap-3">
+          <ShopFilter active={shop} />
+          <Link
+            href="/crm/leads/new"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white bg-brand-blue hover:bg-brand-blue-dark transition-colors whitespace-nowrap"
+          >
+            <Plus className="w-4 h-4" />
+            Add lead
+          </Link>
+        </div>
       </div>
 
       <Board leads={leads} />

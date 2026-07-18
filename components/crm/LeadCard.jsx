@@ -22,7 +22,7 @@ export default function LeadCard({ lead }) {
         </a>
       </p>
       <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5 truncate">{lead.carModel}</p>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">{lead.issue}</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">{lead.issue || '—'}</p>
 
       <div className="flex items-center justify-between mt-2">
         {lead.value != null ? (
