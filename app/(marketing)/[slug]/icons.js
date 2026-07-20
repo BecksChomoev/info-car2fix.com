@@ -13,9 +13,19 @@ import {
   LifeBuoy,
   Flame,
   ClipboardCheck,
+  Thermometer,
+  Fuel,
+  Car,
+  Paintbrush,
+  Hammer,
+  Frame,
+  Sparkles,
+  Glasses,
+  Layers,
 } from 'lucide-react'
 
 export const SERVICE_ICONS = {
+  // Mechanical shop
   Wrench,
   Gauge,
   Battery,
@@ -28,4 +38,14 @@ export const SERVICE_ICONS = {
   LifeBuoy,
   Flame,
   ClipboardCheck,
+  Thermometer,
+  Fuel,
+  // Body shop
+  Car,
+  Paintbrush,
+  Hammer,
+  Frame,
+  Sparkles,
+  Glasses,
+  Layers,
 }

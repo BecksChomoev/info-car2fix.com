@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MapPin, Clock, Phone, CalendarCheck, Droplet } from 'lucide-react'
+import { MapPin, Clock, Phone, CalendarCheck, Droplet, ShieldCheck } from 'lucide-react'
 import { PHONE, MECH_SHOP } from '@/lib/site'
 import { SERVICE_ICONS } from '@/app/(marketing)/[slug]/icons'
 
@@ -70,7 +70,10 @@ const ART = {
 
 export default function ServiceHero({ page }) {
   const HeroIcon = SERVICE_ICONS[page.icon] || SERVICE_ICONS.Wrench
-  const art = ART[page.slug] || { img: 'hero-engine-repair' }
+  // Pages with a bespoke Figma banner render use it; newer services without one
+  // fall back to a clean icon medallion rather than a mismatched stock banner.
+  const art = ART[page.slug]
+  const hasArt = Boolean(art)
 
   // The Figma copy always breaks the H1 as "<Service>" / "in Newark, NJ" —
   // split on the first " in " and fall back to a single line if a future
@@ -151,43 +154,61 @@ export default function ServiceHero({ page }) {
             initial={{ opacity: 0, y: 24, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-2 lg:mt-0 -mb-8 sm:-mb-10 lg:mb-0 flex justify-center lg:justify-end lg:flex-1"
+            className={`mt-2 lg:mt-0 lg:mb-0 flex justify-center lg:justify-end lg:flex-1 ${
+              hasArt ? '-mb-8 sm:-mb-10' : ''
+            }`}
           >
-            <div
-              className={`relative block ${art.mobile || 'w-[86%] max-w-[400px]'} mx-auto lg:mx-0 lg:inline-block lg:w-auto lg:max-w-full`}
-            >
-              <img
-                src={`/banners/${art.img}.webp`}
-                alt=""
-                aria-hidden="true"
-                draggable={false}
-                loading="eager"
-                className="relative z-10 block w-full h-auto lg:w-auto lg:h-auto lg:max-h-[420px] xl:max-h-[460px] lg:max-w-full object-contain"
-              />
-
-              {art.accent && (
+            {hasArt ? (
+              <div
+                className={`relative block ${art.mobile || 'w-[86%] max-w-[400px]'} mx-auto lg:mx-0 lg:inline-block lg:w-auto lg:max-w-full`}
+              >
                 <img
-                  src={`/banners/${art.accent.src}.webp`}
+                  src={`/banners/${art.img}.webp`}
                   alt=""
                   aria-hidden="true"
                   draggable={false}
                   loading="eager"
-                  className={`absolute z-20 h-auto object-contain ${art.accent.className}`}
+                  className="relative z-10 block w-full h-auto lg:w-auto lg:h-auto lg:max-h-[420px] xl:max-h-[460px] lg:max-w-full object-contain"
                 />
-              )}
 
-              {art.droplet && (
-                <div className="absolute z-20 -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16">
-                  <div
-                    className="absolute inset-0 rounded-full bg-[#E63950]/40 blur-xl scale-150"
+                {art.accent && (
+                  <img
+                    src={`/banners/${art.accent.src}.webp`}
+                    alt=""
                     aria-hidden="true"
+                    draggable={false}
+                    loading="eager"
+                    className={`absolute z-20 h-auto object-contain ${art.accent.className}`}
                   />
-                  <div className="relative w-full h-full rounded-full bg-gradient-to-br from-[#E63950] to-[#C41E3A] flex items-center justify-center shadow-lg">
-                    <Droplet className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="white" />
+                )}
+
+                {art.droplet && (
+                  <div className="absolute z-20 -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16">
+                    <div
+                      className="absolute inset-0 rounded-full bg-[#E63950]/40 blur-xl scale-150"
+                      aria-hidden="true"
+                    />
+                    <div className="relative w-full h-full rounded-full bg-gradient-to-br from-[#E63950] to-[#C41E3A] flex items-center justify-center shadow-lg">
+                      <Droplet className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="white" />
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72">
+                <div className="absolute inset-0 rounded-full bg-white/5 border border-white/10" aria-hidden="true" />
+                <div className="absolute inset-6 rounded-full bg-white/5 border border-white/10" aria-hidden="true" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center justify-center w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-white/95 shadow-2xl shadow-black/25">
+                    <HeroIcon className="w-14 h-14 sm:w-16 sm:h-16 text-[#273990]" strokeWidth={1.75} />
                   </div>
                 </div>
-              )}
-            </div>
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-[#273990] text-xs font-semibold shadow-lg whitespace-nowrap">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  <span>12-Mo / 12K Warranty</span>
+                </div>
+              </div>
+            )}
           </motion.div>
         </div>
       </div>

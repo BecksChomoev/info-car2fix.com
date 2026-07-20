@@ -8,8 +8,13 @@ export default function FAQ({
   items,
   heading = 'Frequently Asked Questions',
   subheading = 'Answers to the questions Newark & Linden drivers ask us most',
+  variant = 'blue',
 }) {
   const [openIndex, setOpenIndex] = useState(0)
+
+  const accent = variant === 'red'
+    ? { pill: 'bg-brand-red/10 dark:bg-brand-red/20 text-brand-red', text: 'text-brand-red', hover: 'hover:text-brand-red dark:hover:text-brand-red' }
+    : { pill: 'bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue', text: 'text-brand-blue', hover: 'hover:text-brand-blue dark:hover:text-brand-blue' }
 
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-950" aria-label="Frequently asked questions">
@@ -20,7 +25,7 @@ export default function FAQ({
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-full text-brand-blue text-sm font-medium mb-4">
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-4 ${accent.pill}`}>
             <HelpCircle className="w-4 h-4" />
             <span>FAQ</span>
           </div>
@@ -49,11 +54,11 @@ export default function FAQ({
                     onClick={() => setOpenIndex(isOpen ? -1 : index)}
                     aria-expanded={isOpen}
                     aria-controls={`faq-panel-${index}`}
-                    className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left hover:text-brand-blue dark:hover:text-brand-blue transition-colors"
+                    className={`w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left transition-colors ${accent.hover}`}
                   >
                     <span>{item.question}</span>
                     <ChevronDown
-                      className={`w-5 h-5 flex-shrink-0 text-brand-blue transition-transform duration-300 ${
+                      className={`w-5 h-5 flex-shrink-0 ${accent.text} transition-transform duration-300 ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                     />

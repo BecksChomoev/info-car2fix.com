@@ -133,14 +133,14 @@ function BeforeAfterGallery() {
 }
 
 const services = [
-  { icon: Car, title: 'Collision Repair', description: 'Complete collision repair services to restore your vehicle to pre-accident condition.' },
-  { icon: Paintbrush, title: 'Auto Painting', description: 'Professional paint jobs with color matching and high-quality finishes.' },
-  { icon: Hammer, title: 'Dent Removal', description: 'Paintless dent repair and traditional dent removal for all sizes of damage.' },
-  { icon: Frame, title: 'Frame Straightening', description: 'Precision frame alignment and straightening using computerized equipment.' },
-  { icon: Sparkles, title: 'Scratch Repair', description: "Expert scratch and scuff removal to restore your vehicle's finish." },
-  { icon: Glasses, title: 'Windshield Replacement', description: 'Windshield and auto glass replacement and repair services.' },
-  { icon: Layers, title: 'Body Panel Replacement', description: 'Replacement of damaged body panels including fenders, doors, and hoods.' },
-  { icon: Wind, title: 'Bumper Repair', description: 'Front and rear bumper repair, replacement, and refinishing.' },
+  { icon: Car, title: 'Collision Repair', description: 'Complete collision repair services to restore your vehicle to pre-accident condition.', href: '/collision-repair-linden-nj' },
+  { icon: Paintbrush, title: 'Auto Painting', description: 'Professional paint jobs with color matching and high-quality finishes.', href: '/auto-body-painting-linden-nj' },
+  { icon: Hammer, title: 'Dent Removal', description: 'Paintless dent repair and traditional dent removal for all sizes of damage.', href: '/dent-removal-linden-nj' },
+  { icon: Frame, title: 'Frame Straightening', description: 'Precision frame alignment and straightening using computerized equipment.', href: '/frame-straightening-linden-nj' },
+  { icon: Sparkles, title: 'Scratch Repair', description: "Expert scratch and scuff removal to restore your vehicle's finish.", href: '/scratch-repair-linden-nj' },
+  { icon: Glasses, title: 'Windshield Replacement', description: 'Windshield and auto glass replacement and repair services.', href: '/windshield-replacement-linden-nj' },
+  { icon: Layers, title: 'Body Panel Replacement', description: 'Replacement of damaged body panels including fenders, doors, and hoods.', href: '/body-panel-replacement-linden-nj' },
+  { icon: Wind, title: 'Bumper Repair', description: 'Front and rear bumper repair, replacement, and refinishing.', href: '/bumper-repair-linden-nj' },
   { icon: ScanLine, title: 'Color Matching', description: 'Computer-aided color matching for seamless paint repairs.' },
   { icon: Dices, title: 'Fiberglass Repair', description: 'Repair of fiberglass body parts and components.' },
   { icon: CircleDot, title: 'Headlight Restoration', description: 'Restore cloudy, yellowed headlights to like-new clarity.' },
@@ -243,6 +243,7 @@ export default function BodyShopContent() {
                 description={service.description}
                 delay={index * 0.05}
                 variant="red"
+                href={service.href}
               />
             ))}
           </div>
