@@ -141,9 +141,9 @@ const services = [
   { icon: Glasses, title: 'Windshield Replacement', description: 'Windshield and auto glass replacement and repair services.', href: '/windshield-replacement-linden-nj' },
   { icon: Layers, title: 'Body Panel Replacement', description: 'Replacement of damaged body panels including fenders, doors, and hoods.', href: '/body-panel-replacement-linden-nj' },
   { icon: Wind, title: 'Bumper Repair', description: 'Front and rear bumper repair, replacement, and refinishing.', href: '/bumper-repair-linden-nj' },
-  { icon: ScanLine, title: 'Color Matching', description: 'Computer-aided color matching for seamless paint repairs.' },
-  { icon: Dices, title: 'Fiberglass Repair', description: 'Repair of fiberglass body parts and components.' },
-  { icon: CircleDot, title: 'Headlight Restoration', description: 'Restore cloudy, yellowed headlights to like-new clarity.' },
+  { icon: ScanLine, title: 'Color Matching', description: 'Computer-aided color matching for seamless paint repairs.', href: '/color-matching-linden-nj' },
+  { icon: Dices, title: 'Fiberglass Repair', description: 'Repair of fiberglass body parts and components.', href: '/fiberglass-repair-linden-nj' },
+  { icon: CircleDot, title: 'Headlight Restoration', description: 'Restore cloudy, yellowed headlights to like-new clarity.', href: '/headlight-restoration-linden-nj' },
 ]
 
 export default function BodyShopContent() {

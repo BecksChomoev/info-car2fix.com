@@ -22,6 +22,9 @@ import {
   Sparkles,
   Glasses,
   Layers,
+  ScanLine,
+  Dices,
+  CircleDot,
 } from 'lucide-react'
 
 export const SERVICE_ICONS = {
@@ -48,4 +51,7 @@ export const SERVICE_ICONS = {
   Sparkles,
   Glasses,
   Layers,
+  ScanLine,
+  Dices,
+  CircleDot,
 }
