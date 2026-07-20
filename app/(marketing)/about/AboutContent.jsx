@@ -49,7 +49,7 @@ const values = [
 
 const whyChooseUs = [
   { icon: BadgeCheck, title: 'ASE & I-CAR Certified Technicians', description: 'Factory-trained professionals who repair to manufacturer standards' },
-  { icon: Award, title: 'Lifetime Warranty on Body Work, 12-Month on Mechanical', description: 'Every repair leaves our shop backed in writing—no fine print' },
+  { icon: Award, title: 'Honest, Transparent Pricing', description: 'Free written estimates and no surprises—the quote is the price you pay' },
   { icon: Clock, title: 'Fast Turnaround', description: 'We respect your time—most repairs done within estimate' },
   { icon: FileCheck, title: 'Works with All Major Insurance Companies', description: 'GEICO, State Farm, Progressive, Allstate & more—we handle the paperwork' },
 ]

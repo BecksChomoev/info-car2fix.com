@@ -19,7 +19,7 @@ import { SERVICE_ICONS } from './icons'
 
 const trustPoints = [
   { icon: BadgeCheck, title: 'ASE & I-CAR Certified', text: 'Certified technicians at both shops, trained to manufacturer standards.' },
-  { icon: Shield, title: 'Real Warranties', text: 'Lifetime warranty on body work, 12-month/12k-mile on mechanical repairs.' },
+  { icon: Shield, title: 'Two Certified Shops', text: 'ASE-certified mechanical in Newark and an I-CAR-certified body shop in Linden.' },
   { icon: DollarSign, title: 'Honest Pricing', text: 'Free estimates and no surprises — the quote is the price.' },
   { icon: FileCheck, title: 'Insurance Claims Handled', text: 'We manage the entire claims process with all major insurers.' },
 ]
@@ -93,7 +93,7 @@ export default function LocationPageContent({ page, services }) {
                 <h3 className="font-display font-bold text-2xl mb-3">Mechanical Repairs</h3>
                 <p className="text-white/80 mb-4">
                   Engine, transmission, brakes, suspension, oil changes, diagnostics, and
-                  everything mechanical — warrantied for 12 months/12,000 miles.
+                  everything mechanical, handled by ASE-certified technicians.
                 </p>
                 <address className="not-italic flex items-start gap-2 text-white/80 mb-6">
                   <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
@@ -123,8 +123,8 @@ export default function LocationPageContent({ page, services }) {
                 </div>
                 <h3 className="font-display font-bold text-2xl mb-3">Body &amp; Collision Repair</h3>
                 <p className="text-white/80 mb-4">
-                  Collision repair, painting, dent removal, and frame straightening with a
-                  lifetime warranty — insurance claims handled start to finish.
+                  Collision repair, painting, dent removal, and frame straightening —
+                  insurance claims handled start to finish.
                 </p>
                 <address className="not-italic flex items-start gap-2 text-white/80 mb-6">
                   <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />

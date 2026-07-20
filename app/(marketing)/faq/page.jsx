@@ -7,7 +7,7 @@ import { PHONE, pageMetadata, breadcrumbLd, faqPageLd } from '@/lib/site'
 export const metadata = pageMetadata({
   title: 'Auto Repair FAQ | Car2Fix Newark & Linden, NJ',
   description:
-    'Answers to common auto repair questions — free estimates, warranties, insurance claims, turnaround times, and which Car2Fix shop to visit in Newark or Linden, NJ.',
+    'Answers to common auto repair questions — free estimates, insurance claims, turnaround times, and which Car2Fix shop to visit in Newark or Linden, NJ.',
   path: '/faq',
   ogImage: '/og-home.jpg',
   ogAlt: 'Car2Fix — Auto Repair FAQ for Newark & Linden, NJ',
@@ -33,7 +33,7 @@ export default function Page() {
             Auto Repair FAQs for Newark &amp; Linden Drivers
           </h1>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Estimates, warranties, insurance claims, turnaround times — straight
+            Estimates, insurance claims, turnaround times — straight
             answers from the Car2Fix team.
           </p>
         </div>

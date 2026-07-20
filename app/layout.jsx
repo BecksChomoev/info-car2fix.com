@@ -25,7 +25,7 @@ export const metadata = {
     template: '%s | Car2Fix',
   },
   description:
-    'Family-owned auto repair shops in Newark and Linden, NJ. Certified mechanical repairs, collision and body work, free estimates. Lifetime warranty on body repairs.',
+    'Family-owned auto repair shops in Newark and Linden, NJ. Certified mechanical repairs, collision and body work, free estimates.',
   authors: [{ name: 'Car2Fix' }],
   alternates: { canonical: SITE_URL },
   openGraph: {

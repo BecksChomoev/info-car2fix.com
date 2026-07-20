@@ -102,7 +102,7 @@ export default function BodyServiceHero({ page }) {
               </div>
               <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-brand-red text-xs font-semibold shadow-lg whitespace-nowrap">
                 <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Lifetime Warranty</span>
+                <span>I-CAR Certified</span>
               </div>
             </div>
           </motion.div>

@@ -5,7 +5,7 @@ import { SITE_URL, BODY_SHOP, pageMetadata, breadcrumbLd } from '@/lib/site'
 export const metadata = pageMetadata({
   title: 'Body Shop in Linden, NJ | Collision Repair | Car2Fix',
   description:
-    'I-CAR certified body shop in Linden, NJ. Collision repair, auto painting, dent removal & frame straightening. We handle insurance claims. Lifetime warranty.',
+    'I-CAR certified body shop in Linden, NJ. Collision repair, auto painting, dent removal & frame straightening. We handle insurance claims.',
   path: '/body-shop',
   ogImage: '/og-body-shop.jpg',
   ogAlt: 'Car2Fix Body Shop in Linden, NJ',

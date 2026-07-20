@@ -20,8 +20,8 @@ import { PHONE, MECH_SHOP, BODY_SHOP } from '@/lib/site'
 const features = [
   {
     icon: Shield,
-    title: 'Lifetime Warranty',
-    description: 'Body shop repairs backed by lifetime warranty. Mechanical work covered 12 months/12k miles.',
+    title: 'Honest, Upfront Pricing',
+    description: 'Free written estimates before any work — the price we quote is the price you pay.',
   },
   {
     icon: Clock,

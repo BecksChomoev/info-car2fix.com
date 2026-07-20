@@ -23,7 +23,7 @@ import { SERVICE_ICONS } from './icons'
 
 const trustPoints = [
   { icon: BadgeCheck, title: 'ASE-Certified Technicians', text: 'Factory-trained professionals working on all makes and models.' },
-  { icon: Shield, title: '12-Month / 12k-Mile Warranty', text: 'Every mechanical repair is backed in writing.' },
+  { icon: Shield, title: 'All Makes & Models', text: 'Foreign and domestic vehicles serviced by our ASE-certified technicians.' },
   { icon: DollarSign, title: 'Honest Pricing', text: 'Free estimates — the price we quote is the price you pay.' },
   { icon: Clock, title: 'Fast Turnaround', text: 'Most repairs completed within the estimated timeframe.' },
 ]
@@ -228,9 +228,9 @@ export default function ServicePageContent({ page, related }) {
                     <Award className="w-6 h-6 text-brand-blue" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Warranty</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Free Estimates</h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      12-month / 12,000-mile warranty on mechanical repairs
+                      Free written estimates before any work — the price we quote is the price you pay
                     </p>
                   </div>
                 </div>

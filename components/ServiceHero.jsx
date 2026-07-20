@@ -205,7 +205,7 @@ export default function ServiceHero({ page }) {
                 </div>
                 <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-[#273990] text-xs font-semibold shadow-lg whitespace-nowrap">
                   <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>12-Mo / 12K Warranty</span>
+                  <span>ASE Certified</span>
                 </div>
               </div>
             )}

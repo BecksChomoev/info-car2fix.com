@@ -25,7 +25,7 @@ const INSURERS = ['GEICO', 'State Farm', 'Progressive', 'Allstate', 'Liberty Mut
 
 const trustPoints = [
   { icon: BadgeCheck, title: 'I-CAR & OEM Certified', text: 'Factory-trained collision and refinish technicians on every repair.' },
-  { icon: ShieldCheck, title: 'Lifetime Warranty', text: 'Our body and paint work is guaranteed for as long as you own the vehicle.' },
+  { icon: ShieldCheck, title: 'OEM-Grade Repairs', text: 'OEM parts and factory-match refinishing on every repair.' },
   { icon: FileCheck, title: 'Insurance Claims Handled', text: 'We manage the entire claims process with all major insurers for you.' },
   { icon: DollarSign, title: 'Free Written Estimates', text: 'Honest estimates with no pressure — the price we quote is the price you pay.' },
 ]
@@ -255,9 +255,9 @@ export default function BodyServicePageContent({ page, related }) {
                     <ShieldCheck className="w-6 h-6 text-brand-red" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Warranty</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Free Estimates</h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Lifetime warranty on all body &amp; paint work
+                      Free written estimates on all body &amp; paint work — no pressure, no surprises
                     </p>
                   </div>
                 </div>

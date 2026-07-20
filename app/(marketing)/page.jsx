@@ -5,7 +5,7 @@ import { pageMetadata, breadcrumbLd } from '@/lib/site'
 export const metadata = pageMetadata({
   title: 'Car2Fix | Auto Repair Shop in Newark & Linden, NJ',
   description:
-    'Family-owned auto repair in Newark & Linden, NJ. ASE & I-CAR certified. Mechanical repairs, collision work, free estimates. Lifetime warranty on body work.',
+    'Family-owned auto repair in Newark & Linden, NJ. ASE & I-CAR certified. Mechanical repairs, collision work, free estimates.',
   path: '/',
   ogImage: '/og-home.jpg',
   ogAlt: 'Car2Fix — Auto Repair Shop in Newark & Linden, NJ',
