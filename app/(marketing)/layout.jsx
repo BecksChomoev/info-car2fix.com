@@ -33,7 +33,7 @@ const organizationLd = {
     {
       '@type': 'AutoBodyShop',
       name: BODY_SHOP.name,
-      telephone: BODY_SHOP.phone.e164,
+      telephone: PHONE.e164,
       url: SITE_URL + BODY_SHOP.path,
       address: BODY_SHOP.postalAddress,
     },

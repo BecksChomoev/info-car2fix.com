@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Sun, Moon, Phone, Menu, X } from 'lucide-react'
-import { PHONE, BODY_SHOP } from '@/lib/site'
+import { PHONE } from '@/lib/site'
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -111,24 +111,13 @@ export default function Navbar() {
               </AnimatePresence>
             </motion.button>
 
-            <div className="hidden md:flex flex-col gap-0.5 leading-tight">
-              <a
-                href={PHONE.href}
-                className="group flex items-center gap-2"
-              >
-                <Phone className="w-3.5 h-3.5 text-brand-blue shrink-0" />
-                <span className="w-28 text-xs font-medium text-gray-500 dark:text-gray-400">Mechanical Shop</span>
-                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-brand-blue transition-colors">{PHONE.display}</span>
-              </a>
-              <a
-                href={BODY_SHOP.phone.href}
-                className="group flex items-center gap-2"
-              >
-                <Phone className="w-3.5 h-3.5 text-brand-red shrink-0" />
-                <span className="w-28 text-xs font-medium text-gray-500 dark:text-gray-400">Body Shop</span>
-                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-brand-red transition-colors">{BODY_SHOP.phone.display}</span>
-              </a>
-            </div>
+            <a
+              href={PHONE.href}
+              className="group hidden md:flex items-center gap-2"
+            >
+              <Phone className="w-4 h-4 text-brand-blue shrink-0" />
+              <span className="text-base font-semibold text-gray-700 dark:text-gray-300 group-hover:text-brand-blue transition-colors">{PHONE.display}</span>
+            </a>
 
             <a
               href={bookHref}
@@ -181,15 +170,7 @@ export default function Navbar() {
                   className="flex items-center justify-center gap-2 px-4 py-4 bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold rounded-xl transition-colors"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>Mechanical Shop · {PHONE.display}</span>
-                </a>
-                <a
-                  href={BODY_SHOP.phone.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 px-4 py-4 bg-brand-red hover:bg-brand-red-dark text-white font-semibold rounded-xl transition-colors"
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>Body Shop · {BODY_SHOP.phone.display}</span>
+                  <span>Call {PHONE.display}</span>
                 </a>
                 <a
                   href={bookHref}

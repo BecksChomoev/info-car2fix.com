@@ -56,5 +56,6 @@ This site is configured for Vercel deployment. Simply connect your GitHub reposi
 
 ## Contact
 
-- **Mechanical Shop**: 408 Carnegie Ave, Newark, NJ 07114 — (607) 251-1509
-- **Body Shop**: 1420 E Elizabeth Ave, Linden, NJ 07036 — (908) 525-3681
+- **Phone (both shops)**: (607) 251-1509
+- **Mechanical Shop**: 408 Carnegie Ave, Newark, NJ 07114
+- **Body Shop**: 1420 E Elizabeth Ave, Linden, NJ 07036

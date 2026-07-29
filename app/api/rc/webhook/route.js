@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { after } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import {
-  shopTypeForNumber,
+  CALL_SHOP_TYPE,
   matchOrCreateLead,
   sendMissedCallAlert,
 } from '@/lib/call-ingest'
@@ -85,7 +85,7 @@ async function handleTelephonyEvent(payload) {
 
   const fromNumber = missedParty.from.phoneNumber
   const toNumber = missedParty.to?.phoneNumber ?? null
-  const shopType = shopTypeForNumber(toNumber)
+  const shopType = CALL_SHOP_TYPE
   const stubId = `tsess:${body.telephonySessionId}`
 
   // One stub per session no matter how many parties/events fire.

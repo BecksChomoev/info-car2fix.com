@@ -45,7 +45,7 @@ Not worth it for v1: RingSense/ACE AI call summaries — paid per-seat add-on li
 - **Recordings under 30 s are never retained** by RingCentral (flag only).
 - **Caller-ID name (CNAM) is best-effort** — often "WIRELESS CALLER" or a city/state. Phone number is the lead key; name is a hint.
 - **Webhooks can be permanently blacklisted** if our endpoint misbehaves (no documented retries) → a reconciliation cron re-checks subscription health and the call-log sync backfills anything missed.
-- **Two shop numbers map calls to shopType**: the dialed number ((973) 344-2573 mechanical / (908) 525-3681 body) routes the call record and the Telegram alert, mirroring the contact-form logic.
+- **One shared line, so the dialed number can no longer map calls to shopType**: Car2Fix advertises a single number ((607) 251-1509) for both shops, so every call is filed as `mechanical` and its Telegram alert goes to TELEGRAM_CHAT_ID_MECHANICAL. The lead's shop is corrected in the CRM once someone talks to the customer. (Contact-form leads still carry the shop the form was submitted from.)
 
 ## Build plan
 

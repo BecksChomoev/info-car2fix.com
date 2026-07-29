@@ -84,7 +84,7 @@ function buildBodyServiceLd(page) {
         '@type': 'AutoBodyShop',
         name: BODY_SHOP.name,
         url: SITE_URL + BODY_SHOP.path,
-        telephone: BODY_SHOP.phone.e164,
+        telephone: PHONE.e164,
         address: BODY_SHOP.postalAddress,
       },
       areaServed: [

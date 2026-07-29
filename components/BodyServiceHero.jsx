@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { MapPin, Clock, Phone, CalendarCheck, ShieldCheck } from 'lucide-react'
-import { BODY_SHOP } from '@/lib/site'
+import { PHONE, BODY_SHOP } from '@/lib/site'
 import { SERVICE_ICONS } from '@/app/(marketing)/[slug]/icons'
 
 // Body-shop service detail hero. Unlike the mechanical ServiceHero (which
@@ -77,11 +77,11 @@ export default function BodyServiceHero({ page }) {
                 <span>Get a free estimate</span>
               </a>
               <a
-                href={BODY_SHOP.phone.href}
+                href={PHONE.href}
                 className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-all border border-white/25"
               >
                 <Phone className="w-5 h-5" />
-                <span>{BODY_SHOP.phone.display}</span>
+                <span>{PHONE.display}</span>
               </a>
             </div>
           </motion.div>

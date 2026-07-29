@@ -127,7 +127,7 @@ model Call {
   fromName           String? // best-effort caller ID (often a city/state or 'WIRELESS CALLER')
   fromLocation       String?
   toNumber           String?
-  shopType           String // 'mechanical' | 'body' — derived from the shop line the customer dialed
+  shopType           String // 'mechanical' | 'body' — one shared line now, so calls come in as 'mechanical'
   result             String // RingCentral result: Accepted | Missed | Voicemail | Busy | No Answer | ...
   action             String?
   transport          String?

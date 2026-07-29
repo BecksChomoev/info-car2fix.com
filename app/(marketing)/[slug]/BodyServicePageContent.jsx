@@ -18,7 +18,7 @@ import ServiceCard from '@/components/ServiceCard'
 import BodyServiceHero from '@/components/BodyServiceHero'
 import ContactForm from '@/components/ContactForm'
 import FAQ from '@/components/FAQ'
-import { BODY_SHOP } from '@/lib/site'
+import { PHONE, BODY_SHOP } from '@/lib/site'
 import { SERVICE_ICONS } from './icons'
 
 const INSURERS = ['GEICO', 'State Farm', 'Progressive', 'Allstate', 'Liberty Mutual', 'USAA']
@@ -204,7 +204,7 @@ export default function BodyServicePageContent({ page, related }) {
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
                 Fill out the form and our team will get back to you with a quote,
-                or call the body shop for immediate assistance.
+                or call us for immediate assistance.
               </p>
 
               <div className="space-y-6">
@@ -214,8 +214,8 @@ export default function BodyServicePageContent({ page, related }) {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
-                    <a href={BODY_SHOP.phone.href} className="text-brand-red hover:underline text-lg">
-                      {BODY_SHOP.phone.display}
+                    <a href={PHONE.href} className="text-brand-red hover:underline text-lg">
+                      {PHONE.display}
                     </a>
                   </div>
                 </div>
