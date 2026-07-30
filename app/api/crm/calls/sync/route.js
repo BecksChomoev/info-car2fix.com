@@ -95,6 +95,8 @@ export async function GET(request) {
     return NextResponse.json({
       success: true,
       syncType: sync?.syncInfo?.syncType,
+      // 'company' or 'extension' — which call-log feed answered (see syncCallLog).
+      scope: sync?.scope,
       records: records.length,
       ingested,
       recordings,
