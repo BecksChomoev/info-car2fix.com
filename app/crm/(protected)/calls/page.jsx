@@ -9,6 +9,10 @@ import { formatRelativeTime } from '@/lib/format'
 // Fed by /api/crm/calls/sync (poller) and /api/rc/webhook (instant alerts).
 
 const PER_PAGE = 50
+
+// Window the metric cards summarise. Matches SEED_DAYS in lib/ringcentral.js —
+// the cards should never claim a longer period than the sync actually backfills.
+const METRIC_DAYS = 30
 const MISSED_RESULTS = ['Missed', 'Busy', 'No Answer', 'Hang Up', 'Rejected']
 
 const FILTERS = [
@@ -56,10 +60,9 @@ export default async function CallsPage({ searchParams }) {
   const page = Math.max(1, Number.parseInt(sp.page, 10) || 1)
 
   const where = buildWhere(filter, shop)
-  const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000)
-  const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
+  const since = new Date(Date.now() - METRIC_DAYS * 24 * 60 * 60 * 1000)
 
-  const [calls, total, syncState, calls24h, missed24h, voicemails24h, inbound7d, answered7d] =
+  const [calls, total, syncState, callsInWindow, missedInWindow, voicemailsInWindow, inbound, answered] =
     await Promise.all([
       prisma.call.findMany({
         where,
@@ -70,27 +73,27 @@ export default async function CallsPage({ searchParams }) {
       }),
       prisma.call.count({ where }),
       prisma.rcSyncState.findUnique({ where: { id: 'singleton' } }),
-      prisma.call.count({ where: { startTime: { gte: dayAgo } } }),
+      prisma.call.count({ where: { startTime: { gte: since } } }),
       prisma.call.count({
         where: {
-          startTime: { gte: dayAgo },
+          startTime: { gte: since },
           direction: 'Inbound',
           result: { in: [...MISSED_RESULTS, 'Voicemail'] },
         },
       }),
       prisma.call.count({
         where: {
-          startTime: { gte: dayAgo },
+          startTime: { gte: since },
           OR: [{ result: 'Voicemail' }, { vmMessageUri: { not: null } }],
         },
       }),
-      prisma.call.count({ where: { startTime: { gte: weekAgo }, direction: 'Inbound' } }),
+      prisma.call.count({ where: { startTime: { gte: since }, direction: 'Inbound' } }),
       prisma.call.count({
-        where: { startTime: { gte: weekAgo }, direction: 'Inbound', result: 'Accepted' },
+        where: { startTime: { gte: since }, direction: 'Inbound', result: 'Accepted' },
       }),
     ])
 
-  const answerRate = inbound7d > 0 ? Math.round((answered7d / inbound7d) * 100) : null
+  const answerRate = inbound > 0 ? Math.round((answered / inbound) * 100) : null
   const totalPages = Math.max(1, Math.ceil(total / PER_PAGE))
   const configured = isRingCentralConfigured()
 
@@ -133,10 +136,17 @@ export default async function CallsPage({ searchParams }) {
       )}
 
       <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <MetricCard label="Calls (24h)" value={calls24h} />
-        <MetricCard label="Missed (24h)" value={missed24h} tone={missed24h > 0 ? 'red' : null} />
-        <MetricCard label="Voicemails (24h)" value={voicemails24h} />
-        <MetricCard label="Answer rate (7d)" value={answerRate == null ? '—' : `${answerRate}%`} />
+        <MetricCard label={`Calls (${METRIC_DAYS}d)`} value={callsInWindow} />
+        <MetricCard
+          label={`Missed (${METRIC_DAYS}d)`}
+          value={missedInWindow}
+          tone={missedInWindow > 0 ? 'red' : null}
+        />
+        <MetricCard label={`Voicemails (${METRIC_DAYS}d)`} value={voicemailsInWindow} />
+        <MetricCard
+          label={`Answer rate (${METRIC_DAYS}d)`}
+          value={answerRate == null ? '—' : `${answerRate}%`}
+        />
       </div>
 
       <div className="mt-5 flex flex-wrap items-center gap-1.5">
