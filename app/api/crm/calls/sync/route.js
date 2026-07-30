@@ -98,6 +98,9 @@ export async function GET(request) {
       // 'company' or 'extension' — which call-log feed answered (see syncCallLog).
       scope: sync?.scope,
       records: records.length,
+      // True when the seed window held more calls than one response can carry,
+      // so the backfill stopped short of SEED_DAYS. Never let that pass silently.
+      truncated: sync?.syncInfo?.olderRecordsExist ?? false,
       ingested,
       recordings,
       voicemails,
