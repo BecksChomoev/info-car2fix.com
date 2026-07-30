@@ -29,6 +29,10 @@ jobs:
             echo "CRON_SECRET secret not configured yet — skipping."
             exit 0
           fi
-          curl --silent --show-error --fail --max-time 120 \
+          # --fail-with-body, not --fail: still exits non-zero on 4xx/5xx, but
+          # prints the response body first. The route returns its error detail
+          # as JSON, and plain --fail threw that away — leaving Vercel runtime
+          # logs as the only way to find out why a sync broke.
+          curl --silent --show-error --fail-with-body --max-time 120 \
             -H "Authorization: Bearer $CRON_SECRET" \
             https://www.car2fix.com/api/crm/calls/sync
